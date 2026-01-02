@@ -1,0 +1,86 @@
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #00e5ff;
+  --secondary: #ff00ff;
+  --glass: rgba(255, 255, 255, 0.05);
+  --font-main: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scroll for the landing visual */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 15vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 50px rgba(0, 229, 255, 0.3));
+  pointer-events: none;
+  z-index: 10;
+  position: relative;
+}
+
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+.scene-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+}
+
+.cta-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cta-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+}
