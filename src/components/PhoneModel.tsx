@@ -5,7 +5,7 @@ import { TextureLoader } from "three";
 import { RoundedBox } from "@react-three/drei";
 
 export default function PhoneModel() {
-  const texture = useLoader(TextureLoader, "/assets/app-screen.png");
+  const texture = useLoader(TextureLoader, "/assets/app-de-frente.png");
 
   return (
     <group rotation={[0, 0, 0]}>
