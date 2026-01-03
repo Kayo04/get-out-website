@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import LanguageDropdown from "./LanguageDropdown";
 
 export default function Navbar() {
-  const { t, locale, toggleLanguage } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <nav className="navbar-float">
@@ -27,37 +28,8 @@ export default function Navbar() {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-        {/* Language Toggle */}
-        <button 
-          onClick={toggleLanguage}
-          className="lang-btn"
-          style={{
-            background: 'rgba(0,0,0,0.05)',
-            border: '1px solid rgba(0,0,0,0.1)',
-            padding: '8px 16px',
-            borderRadius: '20px',
-            cursor: 'pointer',
-            fontSize: '0.9rem',
-            fontWeight: 800,
-            color: 'var(--text-main)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            transition: 'all 0.2s ease',
-            zIndex: 1001
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.05)';
-            e.currentTarget.style.background = 'rgba(0,0,0,0.1)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
-            e.currentTarget.style.background = 'rgba(0,0,0,0.05)';
-          }}
-        >
-          <span style={{ fontSize: '1.2rem' }}>{locale === 'en' ? '🇺🇸' : '🇵🇹'}</span>
-          {locale === 'en' ? 'EN' : 'PT'}
-        </button>
+        {/* Language Dropdown */}
+        <LanguageDropdown />
 
         <Link href="/download" className="btn btn-primary" style={{ padding: '10px 24px', fontSize: '0.8rem' }}>
           {t.navbar.download}
