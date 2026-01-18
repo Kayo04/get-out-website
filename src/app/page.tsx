@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import Feature from "@/components/Features";
+import LaunchCountdown from "@/components/Countdown";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -71,6 +72,8 @@ export default function Home() {
 
           </div>
         </section>
+
+        <LaunchCountdown />
 
         {/* FEATURES SECTION */}
          <Feature/>

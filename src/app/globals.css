@@ -316,3 +316,17 @@ footer {
     order: unset !important;
   }
 }
+
+.countdown {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 24px 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.countdown strong {
+  font-size: 1.1rem;
+  color: var(--primary);
+}
