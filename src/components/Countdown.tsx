@@ -21,14 +21,13 @@ export default function LaunchCountdown() {
       days: Math.floor(diff / (1000 * 60 * 60 * 24)),
       hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
       minutes: Math.floor((diff / (1000 * 60)) % 60),
-      seconds: Math.floor((diff / 1000) % 60),
     };
   }
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(getTimeLeft());
-    }, 1000);
+    }, 60000); // Update every minute instead of second
 
     return () => clearInterval(timer);
   }, []);
@@ -45,7 +44,6 @@ export default function LaunchCountdown() {
     { value: timeLeft.days, label: locale === 'pt' ? 'DIAS' : 'DAYS' },
     { value: timeLeft.hours, label: locale === 'pt' ? 'HORAS' : 'HOURS' },
     { value: timeLeft.minutes, label: locale === 'pt' ? 'MINUTOS' : 'MINUTES' },
-    { value: timeLeft.seconds, label: locale === 'pt' ? 'SEGUNDOS' : 'SECONDS' },
   ];
 
   return (

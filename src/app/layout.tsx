@@ -11,7 +11,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "GET OUT | The Nightlife App",
+  title: "GET OUT | Planeia menos, Vive mais!",
   description: "Discover the best events and parties near you.",
 };
 
