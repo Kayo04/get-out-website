@@ -49,23 +49,6 @@ export default function Testimonials() {
 
         <div style={{ maxWidth: '600px', margin: '0 auto', position: 'relative', marginTop: '40px' }}>
             
-            {/* Carousel Controls - Repositioned for Mobile */}
-            <div className="carousel-controls">
-                <button 
-                    onClick={prevReview}
-                    className="nav-btn prev"
-                >
-                    ‹
-                </button>
-                <div style={{ flex: 1 }}></div> {/* Spacer */}
-                <button 
-                    onClick={nextReview}
-                    className="nav-btn next"
-                >
-                    ›
-                </button>
-            </div>
-
             {/* Review Card - Play Store Style */}
             <div className="glass-card" style={{ padding: '30px', minHeight: '200px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' }}>
@@ -92,6 +75,12 @@ export default function Testimonials() {
                 <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', margin: 0 }}>
                     "{reviews[activeIndex].text}"
                 </p>
+            </div>
+
+            {/* Controls (Desktop: Absolute Sides | Mobile: Below Card) */}
+            <div className="carousel-controls">
+                <button onClick={prevReview} className="nav-btn prev" aria-label="Previous">‹</button>
+                <button onClick={nextReview} className="nav-btn next" aria-label="Next">›</button>
             </div>
             
             {/* Dots */}
