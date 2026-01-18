@@ -1,5 +1,6 @@
 "use client";
 
+
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { en, Translations } from "@/locales/en";
 import { pt } from "@/locales/pt";

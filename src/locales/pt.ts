@@ -78,8 +78,8 @@ export const pt = {
     },
     hero: {
         subtitle: "PLATAFORMA DE GESTÃO SOCIAL",
-        title_start: "CENTRALIZE OS",
-        title_end: "SEUS EVENTOS",
+        title_start: "Planeia Menos, ",
+        title_end: "Vive Mais",
         description: "O Get Out otimiza a coordenação social. Substitua conversas fragmentadas por páginas de evento estruturadas. Crie eventos, gerencie a lista de convidados e controle a bilheteira numa plataforma unificada.",
         cta_download: "Começar Agora",
         cta_learn: "Ver Funcionalidades",

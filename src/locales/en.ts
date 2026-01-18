@@ -78,8 +78,8 @@ export const en = {
     },
     hero: {
         subtitle: "SOCIAL MANAGEMENT PLATFORM",
-        title_start: "CENTRALIZE",
-        title_end: "YOUR EVENTS",
+        title_start: "Plan Less, ",
+        title_end: "Live More",
         description: "Get Out streamlines social coordination. Replace fragmented chat threads with structured event pages. Create events, manage guest lists, and handle ticketing in one unified platform.",
         cta_download: "Get Started",
         cta_learn: "View Features",
