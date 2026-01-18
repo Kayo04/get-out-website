@@ -4,7 +4,8 @@ export const en = {
         about: "About",
         download: "Download",
         features: "Features",
-        contact: "Contact"
+        contact: "Contact",
+        faq: "FAQ"
     },
     meta: {
         contact_title: "Contact Us",
@@ -97,9 +98,71 @@ export const en = {
     },
     footer: {
         motto: "The efficient standard for modern social logistics.",
+        product: "PRODUCT",
+        company: "COMPANY",
+        legal: "LEGAL",
         explore: "EXPLORE",
         connect: "CONNECT",
-        copyright: "All rights reserved."
+        copyright: "All rights reserved.",
+        links: {
+            features: "Features",
+            download: "Download",
+            about: "About",
+            contact: "Contact",
+            privacy: "Privacy",
+            terms: "Terms of Service"
+        }
+    },
+    partners: {
+        trusted_by: "TRUSTED BY INDUSTRY LEADERS"
+    },
+    showcase: {
+        organize_title: "Host with Ease",
+        organize_subtitle: "ORGANIZE",
+        organize_desc: "Create an event in seconds. Manage your guest list, track RSVPs in real-time, and scan tickets at the door. No more spreadsheets.",
+        attend_title: "Night Out, Sorted",
+        attend_subtitle: "ATTEND",
+        attend_desc: "All your tickets, group chats, and event details in one place. Arrive smoother, enter faster.",
+        demo_event_name: "Rooftop Sunset Party",
+        demo_location: "Sky Bar, Lisbon",
+        demo_ticket: "VIP Access"
+    },
+    how_it_works: {
+        title: "HOW IT WORKS",
+        subtitle: "Simple, fast, and effective.",
+        step1_title: "Create Event",
+        step1_desc: "Set the details in seconds.",
+        step2_title: "Invite Friends",
+        step2_desc: "Share a single link. No more spam.",
+        step3_title: "Get Out",
+        step3_desc: "Track RSVPs and scan tickets at the door."
+    },
+    app_screens: {
+        title: "INTERFACE PREVIEW",
+        subtitle: "Designed for speed and clarity."
+    },
+    testimonials: {
+        title: "WHAT USERS SAY",
+        subtitle: "Join thousands of satisfied organizers.",
+        review1: "Finally, an app that understands how hard it is to organize a dinner. No more 50-message threads.",
+        user1: "Sarah J.",
+        role1: "Event Planner",
+        review2: "The ticketing system is flawless. Used it for my theatre troupe and it was seamless.",
+        user2: "Miguel R.",
+        role2: "Theatre Director",
+        review3: "I love the heatmaps. We always find the best spots on Friday nights.",
+        user3: "Andre P.",
+        role3: "Student"
+    },
+    faq: {
+        title: "FREQUENTLY ASKED QUESTIONS",
+        subtitle: "Everything you need to know.",
+        q1: "Is the app free?",
+        a1: "Yes, for free events. We only charge a small fee for paid ticket sales.",
+        q2: "Can I manage private events?",
+        a2: "Absolutely. You can set events to 'Private' and they won't appear on the public feed.",
+        q3: "How do I get paid for tickets?",
+        a3: "Payouts are processed weekly directly to your bank account."
     },
     about: {
         hero_title_1: "Efficient",

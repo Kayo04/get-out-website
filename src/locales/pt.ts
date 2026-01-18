@@ -4,7 +4,8 @@ export const pt = {
         about: "Sobre",
         download: "Download",
         features: "Funcionalidades",
-        contact: "Contactos"
+        contact: "Contactos",
+        faq: "FAQ"
     },
     meta: {
         contact_title: "Contacta-nos",
@@ -97,9 +98,71 @@ export const pt = {
     },
     footer: {
         motto: "O padrão eficiente para a logística social moderna.",
+        product: "PRODUTO",
+        company: "EMPRESA",
+        legal: "LEGAL",
         explore: "EXPLORAR",
         connect: "CONECTAR",
-        copyright: "Todos os direitos reservados."
+        copyright: "Todos os direitos reservados.",
+        links: {
+            features: "Funcionalidades",
+            download: "Download",
+            about: "Sobre",
+            contact: "Contactos",
+            privacy: "Privacidade",
+            terms: "Termos de Serviço"
+        }
+    },
+    partners: {
+        trusted_by: "USADO PELOS LÍDERES DA INDÚSTRIA"
+    },
+    showcase: {
+        organize_title: "Organiza sem Stress",
+        organize_subtitle: "ORGANIZAR",
+        organize_desc: "Cria um evento em segundos. Gere a lista de convidados, segue as confirmações em tempo real e valida bilhetes à porta.",
+        attend_title: "A Tua Noite, Simplificada",
+        attend_subtitle: "SAIR",
+        attend_desc: "Todos os teus bilhetes, chats de grupo e detalhes do evento num só lugar. Entra mais rápido, diverte-te mais.",
+        demo_event_name: "Sunset no Terraço",
+        demo_location: "Sky Bar, Lisboa",
+        demo_ticket: "Acesso VIP"
+    },
+    how_it_works: {
+        title: "COMO FUNCIONA",
+        subtitle: "Simples, rápido e eficaz.",
+        step1_title: "Criar Evento",
+        step1_desc: "Define os detalhes em segundos.",
+        step2_title: "Convidar Amigos",
+        step2_desc: "Partilha um único link. Sem spam.",
+        step3_title: "Get Out",
+        step3_desc: "Controla presenças e valida bilhetes à porta."
+    },
+    app_screens: {
+        title: "PREVIEW DA INTERFACE",
+        subtitle: "Desenhado para velocidade e clareza."
+    },
+    testimonials: {
+        title: "O QUE DIZEM OS UTILIZADORES",
+        subtitle: "Junte-se a milhares de organizadores satisfeitos.",
+        review1: "Finalmente uma app que percebe como é difícil organizar um jantar. Acabaram-se os 500 mensagens.",
+        user1: "Sara J.",
+        role1: "Planeadora de Eventos",
+        review2: "O sistema de bilheteira é impecável. Usei para o meu grupo de teatro e foi super simples.",
+        user2: "Miguel R.",
+        role2: "Diretor de Teatro",
+        review3: "Adoro os mapas de calor. Encontramos sempre os melhores spots à sexta-feira.",
+        user3: "André P.",
+        role3: "Estudante"
+    },
+    faq: {
+        title: "PERGUNTAS FREQUENTES",
+        subtitle: "Tudo o que precisas de saber.",
+        q1: "A app é gratuita?",
+        a1: "Sim, para eventos gratuitos. Apenas cobramos uma pequena taxa em bilhetes pagos.",
+        q2: "Posso gerir eventos privados?",
+        a2: "Claro. Podes definir eventos como 'Privado' e não aparecem no feed público.",
+        q3: "Como recebo o dinheiro dos bilhetes?",
+        a3: "Os pagamentos são processados semanalmente diretamente para a tua conta bancária."
     },
     about: {
         hero_title_1: "Logística",

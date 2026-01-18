@@ -3,6 +3,7 @@
   --background: #ffffff;
   --surface: #ffffff;
   --surface-secondary: #f4f7fa;
+  --surface-tertiary: #e2e8f0;
   /* Light blue-grey for alternate sections */
 
   --primary: #ff6b00;
@@ -108,12 +109,14 @@ p {
 .text-gradient {
   background: linear-gradient(135deg, var(--primary) 0%, #ff9500 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-blue {
   background: linear-gradient(135deg, var(--secondary) 0%, #00aaff 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -239,17 +242,61 @@ footer {
 }
 
 /* Responsive */
+/* Responsive */
+.mobile-only {
+  display: none !important;
+}
+
 @media (max-width: 968px) {
   .grid-2 {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  h1 {
-    font-size: 3rem;
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
   }
 
   .navbar-float {
     padding: 0 20px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .glass-card {
+    padding: 30px;
+  }
+
+  /* Fix Phone Mockup on Mobile */
+  .phone-mockup {
+    width: 100% !important;
+    max-width: 320px;
+    /* Limit size on mobile */
+    height: auto !important;
+    aspect-ratio: 9/19;
+  }
+
+  /* Fix order reversal consistency on mobile */
+  /* We want Text first, then Image always on mobile */
+  .grid-2>div {
+    order: unset !important;
   }
 }

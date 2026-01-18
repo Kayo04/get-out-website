@@ -3,6 +3,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PhoneScene from "@/components/PhoneScene";
+import Testimonials from "@/components/Testimonials";
+import AppShowcase from "@/components/AppShowcase";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
@@ -44,9 +46,9 @@ export default function Home() {
                 {t.hero.description}
               </p>
               
-              <div style={{ marginTop: '3rem', display: 'flex', gap: '20px' }}>
+              <div style={{ marginTop: '3rem', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
                 <Link href="/download" className="btn btn-primary">{t.hero.cta_download}</Link>
-                <Link href="/about" className="btn btn-blue">{t.hero.cta_learn}</Link>
+                <Link href="/features" className="btn btn-blue">{t.hero.cta_learn}</Link>
               </div>
 
               <div style={{ marginTop: '4rem', display: 'flex', gap: '40px' }}>
@@ -62,7 +64,7 @@ export default function Home() {
             </div>
 
             {/* Right: 3D Scene */}
-            <div style={{ height: '700px', width: '100%', position: 'relative' }}>
+            <div className="desktop-only" style={{ height: '700px', width: '100%', position: 'relative' }}>
                <PhoneScene />
             </div>
 
@@ -107,6 +109,13 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* APP SHOWCASE (ORGANIZE & ATTEND) */}
+        <AppShowcase />
+
+        {/* TESTIMONIALS */}
+        <Testimonials />
+
       </main>
       <Footer />
     </>
