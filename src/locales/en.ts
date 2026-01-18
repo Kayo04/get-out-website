@@ -152,7 +152,13 @@ export const en = {
         role2: "Theatre Director",
         review3: "I love the heatmaps. We always find the best spots on Friday nights.",
         user3: "Andre P.",
-        role3: "Student"
+        role3: "Student",
+        review4: "Best app for college parties. The QR code scanner is super fast.",
+        user4: "Alex M.",
+        role4: "Social Chair",
+        review5: "Finally organized my hiking group events properly. No more loose ends.",
+        user5: "David K.",
+        role5: "Outdoor Lead"
     },
     faq: {
         title: "FREQUENTLY ASKED QUESTIONS",

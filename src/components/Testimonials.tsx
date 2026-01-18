@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Testimonials() {
   const { t } = useLanguage();
@@ -28,6 +28,20 @@ export default function Testimonials() {
       role: t.testimonials ? t.testimonials.role3 : "Student",
       stars: 4,
       date: "05/01/2026"
+    },
+    {
+      text: t.testimonials ? (t.testimonials as any).review4 : "Best app for college parties. The QR code scanner is super fast.",
+      user: t.testimonials ? (t.testimonials as any).user4 : "Alex M.",
+      role: t.testimonials ? (t.testimonials as any).role4 : "Social Chair",
+      stars: 5,
+      date: "02/01/2026"
+    },
+    {
+      text: t.testimonials ? (t.testimonials as any).review5 : "Finally organized my hiking group events properly. No more loose ends.",
+      user: t.testimonials ? (t.testimonials as any).user5 : "David K.",
+      role: t.testimonials ? (t.testimonials as any).role5 : "Outdoor Lead",
+      stars: 5,
+      date: "28/12/2025"
     }
   ];
 
@@ -38,6 +52,15 @@ export default function Testimonials() {
   const prevReview = () => {
     setActiveIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
   };
+
+  // Auto-rotate every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % reviews.length);
+    }, 5000); 
+
+    return () => clearInterval(interval);
+  }, [reviews.length]);
 
   return (
     <section className="section">
@@ -51,37 +74,35 @@ export default function Testimonials() {
             
             {/* Review Card - Play Store Style */}
             <div className="glass-card" style={{ padding: '30px', minHeight: '200px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                        <div style={{ 
-                            width: '40px', height: '40px', 
-                            background: 'linear-gradient(135deg, var(--primary), var(--secondary))', 
-                            borderRadius: '50%',
-                            color: 'white', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center'
-                        }}>
-                            {reviews[activeIndex].user.charAt(0)}
-                        </div>
-                        <div>
-                            <div style={{ fontWeight: 600, color: 'var(--text-main)', fontSize: '0.95rem' }}>{reviews[activeIndex].user}</div>
-                            <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                                <span style={{ color: '#FFD700' }}>{'★'.repeat(reviews[activeIndex].stars)}</span>
-                                <span>{reviews[activeIndex].date}</span>
+                <div key={activeIndex} className="fade-in">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                            <div style={{ 
+                                width: '40px', height: '40px', 
+                                background: 'linear-gradient(135deg, var(--primary), var(--secondary))', 
+                                borderRadius: '50%',
+                                color: 'white', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center'
+                            }}>
+                                {reviews[activeIndex].user.charAt(0)}
+                            </div>
+                            <div>
+                                <div style={{ fontWeight: 600, color: 'var(--text-main)', fontSize: '0.95rem' }}>{reviews[activeIndex].user}</div>
+                                <div style={{ fontSize: '0.8rem', color: 'var(--text-dim)', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                                    <span style={{ color: '#FFD700' }}>{'★'.repeat(reviews[activeIndex].stars)}</span>
+                                    <span>{reviews[activeIndex].date}</span>
+                                </div>
                             </div>
                         </div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Play_Arrow_logo.svg/512px-Google_Play_Arrow_logo.svg.png" alt="Play Store" style={{ width: '20px', opacity: 0.5 }} />
                     </div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Play_Arrow_logo.svg/512px-Google_Play_Arrow_logo.svg.png" alt="Play Store" style={{ width: '20px', opacity: 0.5 }} />
+                    
+                    <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', margin: 0 }}>
+                        "{reviews[activeIndex].text}"
+                    </p>
                 </div>
-                
-                <p style={{ color: 'var(--text-dim)', lineHeight: '1.6', margin: 0 }}>
-                    "{reviews[activeIndex].text}"
-                </p>
             </div>
 
-            {/* Controls (Desktop: Absolute Sides | Mobile: Below Card) */}
-            <div className="carousel-controls">
-                <button onClick={prevReview} className="nav-btn prev" aria-label="Previous">‹</button>
-                <button onClick={nextReview} className="nav-btn next" aria-label="Next">›</button>
-            </div>
+
             
             {/* Dots */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '20px' }}>
@@ -91,8 +112,9 @@ export default function Testimonials() {
                         onClick={() => setActiveIndex(i)}
                         style={{ 
                             width: '8px', height: '8px', borderRadius: '50%', 
-                            background: i === activeIndex ? 'var(--primary)' : 'var(--glass-border)',
-                            cursor: 'pointer'
+                            background: i === activeIndex ? 'var(--primary)' : '#cbd5e1',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s ease'
                         }} 
                     />
                 ))}

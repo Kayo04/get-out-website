@@ -152,7 +152,13 @@ export const pt = {
         role2: "Diretor de Teatro",
         review3: "Adoro os mapas de calor. Encontramos sempre os melhores spots à sexta-feira.",
         user3: "André P.",
-        role3: "Estudante"
+        role3: "Estudante",
+        review4: "A melhor app para festas da faculdade. O scanner de QR code é super rápido.",
+        user4: "Alex M.",
+        role4: "Responsável Social",
+        review5: "Finalmente organizei os eventos do meu grupo de caminhadas. Sem pontas soltas.",
+        user5: "David K.",
+        role5: "Líder Outdoor"
     },
     faq: {
         title: "PERGUNTAS FREQUENTES",
