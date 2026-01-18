@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   description: "Discover the best events and parties near you.",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#000000',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

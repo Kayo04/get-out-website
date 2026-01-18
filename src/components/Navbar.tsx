@@ -24,7 +24,9 @@ export default function Navbar() {
       
       <div className="nav-links">
         <Link href="/" className="nav-link">{t.navbar.home}</Link>
+        <Link href="/features" className="nav-link">{t.navbar.features}</Link>
         <Link href="/about" className="nav-link">{t.navbar.about}</Link>
+        <Link href="/contact" className="nav-link">{t.navbar.contact}</Link>
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>

@@ -51,11 +51,11 @@ export default function Home() {
 
               <div style={{ marginTop: '4rem', display: 'flex', gap: '40px' }}>
                    <div>
-                     <h3 style={{ fontSize: '2rem', marginBottom: '0', color: 'var(--text-main)' }}>50k+</h3>
+                     <h3 style={{ fontSize: '2rem', marginBottom: '0', color: 'var(--text-main)' }}>1.2M+</h3>
                      <span style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>{t.hero.stats_users}</span>
                    </div>
                    <div>
-                     <h3 style={{ fontSize: '2rem', marginBottom: '0', color: 'var(--text-main)' }}>120+</h3>
+                     <h3 style={{ fontSize: '2rem', marginBottom: '0', color: 'var(--text-main)' }}>85k+</h3>
                      <span style={{ color: 'var(--text-dim)', fontSize: '0.9rem' }}>{t.hero.stats_venues}</span>
                    </div>
               </div>
