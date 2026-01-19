@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, Float, Stars, Sparkles } from "@react-three/drei";
+import { OrbitControls, Environment, Float} from "@react-three/drei";
 import { Suspense } from "react";
 import PhoneModel from "./PhoneModel";
 
@@ -18,9 +18,6 @@ export default function PhoneScene() {
             <PhoneModel />
           </Float>
           <Environment preset="night" />
-          <Stars radius={150} depth={60} count={6000} factor={5} saturation={0.5} fade speed={0.8} />
-          {/* Add some sparkle */}
-          <Sparkles count={50} scale={10} size={3} speed={0.4} opacity={0.5} color="#88ccff" />
         </Suspense>
         
         <OrbitControls 
