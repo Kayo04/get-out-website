@@ -5,7 +5,9 @@ export const pt = {
         download: "Download",
         features: "Funcionalidades",
         contact: "Contactos",
-        faq: "FAQ"
+        faq: "FAQ",
+        mode_dark: "Modo Escuro",
+        mode_light: "Modo Claro"
     },
     meta: {
         contact_title: "Contacta-nos",
@@ -98,6 +100,7 @@ export const pt = {
     },
     footer: {
         motto: "O padrão eficiente para a logística social moderna.",
+        slogan: "Potencia as tuas Ligações Sociais \n com a App GetOut",
         product: "PRODUTO",
         company: "EMPRESA",
         legal: "LEGAL",
@@ -105,6 +108,10 @@ export const pt = {
         connect: "CONECTAR",
         copyright: "Todos os direitos reservados.",
         links: {
+            benefits: "Benefícios",
+            pricing: "Preços",
+            testimonials: "Testemunhos",
+            waitlist: "Lista de Espera",
             features: "Funcionalidades",
             download: "Download",
             about: "Sobre",
@@ -139,7 +146,12 @@ export const pt = {
     },
     app_screens: {
         title: "PREVIEW DA INTERFACE",
-        subtitle: "Desenhado para velocidade e clareza."
+        subtitle: "Desenhado para velocidade e clareza.",
+        list: [
+            "Feed de Eventos",
+            "QR de Bilhete",
+            "Grupo de Chat"
+        ]
     },
     testimonials: {
         title: "O QUE DIZEM OS UTILIZADORES",
@@ -183,5 +195,18 @@ export const pt = {
         desc: "Descarrega a app agora e descobre os melhores eventos, festas e experiências perto de ti. Disponível para iOS e Android.",
         btn_ios: "App Store",
         btn_android: "Google Play"
+    },
+    countdown: {
+        launch_label: "LANÇAMENTO OFICIAL",
+        days: "DIAS",
+        hours: "HORAS",
+        minutes: "MINUTOS",
+        month_march_short: "Mar",
+        live_msg: "Estamos no Ar! 🚀"
+    },
+    app_download_section: {
+        title_start: "Dá Download ao GetOut",
+        title_end: "Social e Conecta-te Hoje",
+        desc: "Descarrega o GetOut agora para começares a conectar-te com pessoas que pensam como tu e desfruta de uma experiência social perfeita!"
     }
 };

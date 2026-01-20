@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function FeaturesPage() {
@@ -42,7 +40,6 @@ export default function FeaturesPage() {
 
   return (
     <>
-      <Navbar />
       <main style={{ paddingTop: "100px", minHeight: "100vh" }}>
         
         {/* Header */}
@@ -84,7 +81,6 @@ export default function FeaturesPage() {
         </section>
 
       </main>
-      <Footer />
     </>
   );
 }

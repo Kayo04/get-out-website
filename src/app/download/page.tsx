@@ -1,7 +1,6 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -9,8 +8,6 @@ export default function DownloadPage() {
   const { t } = useLanguage();
 
   return (
-    <>
-      <Navbar />
       <main style={{ paddingTop: 'var(--nav-height)', minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
         <div className="container grid-2" style={{ alignItems: 'center' }}>
           <div>
@@ -50,7 +47,5 @@ export default function DownloadPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
   );
 }

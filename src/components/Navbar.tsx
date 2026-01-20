@@ -167,7 +167,7 @@ export default function Navbar() {
                 marginBottom: '15px'
               }}
             >
-               {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+               {theme === 'light' ? t.navbar.mode_dark : t.navbar.mode_light}
             </button>
           )}
 

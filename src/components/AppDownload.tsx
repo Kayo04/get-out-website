@@ -6,8 +6,10 @@ import { Environment, Center } from "@react-three/drei";
 import PhoneModel from "./PhoneModel";
 
 import { useTheme } from "@/context/ThemeContext";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function AppDownloadSection() {
+  const { t } = useLanguage();
   const { theme } = useTheme();
   const isDarkMode = theme === 'dark';
 
@@ -30,10 +32,10 @@ export default function AppDownloadSection() {
       {/* TEXTO E BOTÕES */}
       <div style={{ zIndex: 10, position: 'relative', marginBottom: '40px' }}>
         <h2 style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.1', marginBottom: '24px' }}>
-          Download GetOut <br /> Social and Connect Today
+          {t.app_download_section.title_start} <br /> {t.app_download_section.title_end}
         </h2>
         <p style={{ color: 'var(--text-dim)', fontSize: '18px', maxWidth: '550px', margin: '0 auto 40px auto' }}>
-          Download GetOut now to start connecting with like-minded people and enjoy a seamless social experience!
+          {t.app_download_section.desc}
         </p>
 
         <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>

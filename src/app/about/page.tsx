@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -10,7 +8,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <Navbar />
       <main style={{ paddingTop: 'var(--nav-height)' }}>
         {/* Hero */}
         <section className="section">
@@ -42,7 +39,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

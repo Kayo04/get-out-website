@@ -8,9 +8,9 @@ export default function AppScreens() {
 
   // Placeholders for now - ideally these would be real screenshots
   const screens = [
-    { title: "Event Feed", color: "var(--surface-secondary)" },
-    { title: "Ticket QR", color: "rgba(0,102,204,0.1)" },
-    { title: "Chat Group", color: "var(--surface-tertiary)" }
+    { title: t.app_screens?.list?.[0] || "Event Feed", color: "var(--surface-secondary)" },
+    { title: t.app_screens?.list?.[1] || "Ticket QR", color: "rgba(0,102,204,0.1)" },
+    { title: t.app_screens?.list?.[2] || "Chat Group", color: "var(--surface-tertiary)" }
   ];
 
   return (

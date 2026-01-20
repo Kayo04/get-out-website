@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
   const { theme } = useTheme();
+  const { t } = useLanguage();
   const isDarkMode = theme === 'dark';
 
   // Estilo base para os botões circulares das redes sociais
@@ -41,7 +43,7 @@ export default function Footer() {
         </div>
 
         <h3 style={{ color: isDarkMode ? 'white' : '#111', textAlign: 'center', fontSize: '18px', fontWeight: '500', marginBottom: '24px', lineHeight: '1.4' }}>
-          Empower Your Social Connections <br /> with GetOut App
+          {t.footer.slogan}
         </h3>
 
         {/* CONTAINER DE CONTACTOS E REDES SOCIAIS */}
@@ -76,9 +78,10 @@ export default function Footer() {
 
         {/* LINKS DE NAVEGAÇÃO */}
         <nav style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '25px', marginBottom: '40px' }}>
-          {['Benefits', 'Features', 'Pricing', 'Testimonials', 'FAQ', 'Waitlist'].map((item) => (
-            <Link key={item} href={`#${item.toLowerCase()}`} style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
-              {item}
+          {['benefits', 'features', 'pricing', 'testimonials', 'faq', 'waitlist'].map((item) => (
+            <Link key={item} href={`#${item}`} style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+               {/* @ts-ignore */}
+               {t.footer.links[item] || item}
             </Link>
           ))}
         </nav>

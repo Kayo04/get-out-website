@@ -6,7 +6,7 @@ import { useLanguage } from "@/context/LanguageContext";
 const LAUNCH_DATE = new Date("2026-03-24T00:00:00");
 
 export default function LaunchCountdown() {
-  const { locale } = useLanguage();
+  const { t } = useLanguage();
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
   function getTimeLeft() {
@@ -34,15 +34,15 @@ export default function LaunchCountdown() {
   if (!timeLeft) {
     return (
       <div className="container" style={{ textAlign: 'center', padding: '60px 0' }}>
-        <h2 style={{ fontSize: '3rem', fontWeight: 800 }} className="text-gradient">We are Live! 🚀</h2>
+        <h2 style={{ fontSize: '3rem', fontWeight: 800 }} className="text-gradient">{t.countdown.live_msg}</h2>
       </div>
     );
   }
 
   const timeUnits = [
-    { value: timeLeft.days, label: locale === 'pt' ? 'DIAS' : 'DAYS' },
-    { value: timeLeft.hours, label: locale === 'pt' ? 'HORAS' : 'HOURS' },
-    { value: timeLeft.minutes, label: locale === 'pt' ? 'MINUTOS' : 'MINUTES' },
+    { value: timeLeft.days, label: t.countdown.days },
+    { value: timeLeft.hours, label: t.countdown.hours },
+    { value: timeLeft.minutes, label: t.countdown.minutes },
   ];
 
   return (
@@ -61,10 +61,10 @@ export default function LaunchCountdown() {
             display: 'block',
             marginBottom: '10px'
           }}>
-            {locale === 'pt' ? 'LANÇAMENTO OFICIAL' : 'OFFICIAL LAUNCH'}
+            {t.countdown.launch_label}
           </span>
           <h2 style={{ fontSize: '3.5rem', margin: '0', lineHeight: 1 }}>
-            24 <span style={{ color: 'var(--text-dim)', fontWeight: 300 }}>Mar</span> 2026
+            24 <span style={{ color: 'var(--text-dim)', fontWeight: 300 }}>{t.countdown.month_march_short}</span> 2026
           </h2>
         </div>
 

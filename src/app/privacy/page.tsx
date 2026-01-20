@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function PrivacyPage() {
@@ -9,7 +7,6 @@ export default function PrivacyPage() {
 
   return (
     <>
-      <Navbar />
       <main style={{ paddingTop: "100px", minHeight: "80vh" }}>
         <div className="container">
           <div className="glass-card" style={{ maxWidth: "800px", margin: "0 auto" }}>
@@ -53,7 +50,6 @@ export default function PrivacyPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

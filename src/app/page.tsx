@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import PhoneScene from "@/components/PhoneScene";
 import Testimonials from "@/components/Testimonials";
 import AppShowcase from "@/components/AppShowcase";
@@ -33,11 +35,12 @@ export default function Home() {
               <h4 style={{ 
                 color: 'var(--secondary)', 
                 letterSpacing: '0.05em', 
-                marginBottom: '1.5rem', 
+                marginLeft: '0.25em',
+                marginBottom: '1em', 
                 fontWeight: 700,
                 fontSize: '0.9rem',
                 textTransform: 'uppercase'
-              }}>
+              }}> 
                 {t.hero.subtitle}
               </h4>
               
@@ -47,9 +50,10 @@ export default function Home() {
                 lineHeight: '1',
                 fontWeight: 800,
                 color: 'var(--text-main)',
-                marginBottom: '1.5rem'
+                marginBottom: '0',
+                marginTop: '0'
               }}>
-                {t.hero.title_start} <br />
+                {t.hero.title_start}<br />
                 <span style={{ color: 'var(--primary)' }}>{t.hero.title_end}</span>
               </h1>
               
@@ -59,7 +63,8 @@ export default function Home() {
                 color: 'var(--text-dim)', 
                 lineHeight: '1.6',
                 maxWidth: '520px',
-                marginBottom: '2.5rem'
+                marginBottom: '2.5rem',
+                marginTop: '1rem'
               }}>
                 {t.hero.description}
               </p>
@@ -115,6 +120,31 @@ export default function Home() {
               alignItems: 'center'
             }}>
                <PhoneScene />
+            </div>
+
+            {/* Mobile-only static image to replace 3D model */}
+            <div className="mobile-only" style={{ 
+              width: '100%', 
+              marginTop: '40px',
+              display: 'flex', 
+              justifyContent: 'center' 
+            }}>
+              <div style={{
+                width: '280px',
+                height: '580px',
+                position: 'relative',
+                borderRadius: '40px',
+                border: '8px solid #1a1a1a',
+                overflow: 'hidden',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+              }}>
+                <Image 
+                  src="/assets/Home.jpg" 
+                  alt="App Screenshot" 
+                  fill 
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
             </div>
 
           </div>

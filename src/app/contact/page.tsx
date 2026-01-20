@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -21,8 +19,6 @@ export default function ContactPage() {
   };
 
   return (
-    <>
-      <Navbar />
       <main style={{ paddingTop: "100px", minHeight: "80vh" }}>
         <div className="container">
           <div style={{ maxWidth: "600px", margin: "0 auto" }}>
@@ -99,7 +95,5 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
   );
 }

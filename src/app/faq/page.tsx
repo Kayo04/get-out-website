@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function FAQPage() {
@@ -23,8 +21,6 @@ export default function FAQPage() {
   ];
 
   return (
-    <>
-      <Navbar />
       <main style={{ paddingTop: '120px', minHeight: '80vh', paddingBottom: '80px' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -42,7 +38,5 @@ export default function FAQPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
   );
 }

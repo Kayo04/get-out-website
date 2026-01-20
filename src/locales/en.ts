@@ -5,7 +5,9 @@ export const en = {
         download: "Download",
         features: "Features",
         contact: "Contact",
-        faq: "FAQ"
+        faq: "FAQ",
+        mode_dark: "Dark Mode",
+        mode_light: "Light Mode"
     },
     meta: {
         contact_title: "Contact Us",
@@ -98,6 +100,7 @@ export const en = {
     },
     footer: {
         motto: "The efficient standard for modern social logistics.",
+        slogan: "Empower Your Social Connections \n with GetOut App",
         product: "PRODUCT",
         company: "COMPANY",
         legal: "LEGAL",
@@ -105,6 +108,10 @@ export const en = {
         connect: "CONNECT",
         copyright: "All rights reserved.",
         links: {
+            benefits: "Benefits",
+            pricing: "Pricing",
+            testimonials: "Testimonials",
+            waitlist: "Waitlist",
             features: "Features",
             download: "Download",
             about: "About",
@@ -139,7 +146,12 @@ export const en = {
     },
     app_screens: {
         title: "INTERFACE PREVIEW",
-        subtitle: "Designed for speed and clarity."
+        subtitle: "Designed for speed and clarity.",
+        list: [
+            "Event Feed",
+            "Ticket QR",
+            "Chat Group"
+        ]
     },
     testimonials: {
         title: "WHAT USERS SAY",
@@ -183,6 +195,19 @@ export const en = {
         desc: "Download the app now and discover the best events, parties, and experiences near you. Available on iOS and Android.",
         btn_ios: "App Store",
         btn_android: "Google Play"
+    },
+    countdown: {
+        launch_label: "OFFICIAL LAUNCH",
+        days: "DAYS",
+        hours: "HOURS",
+        minutes: "MINUTES",
+        month_march_short: "Mar",
+        live_msg: "We are Live! 🚀"
+    },
+    app_download_section: {
+        title_start: "Download GetOut",
+        title_end: "Social and Connect Today",
+        desc: "Download GetOut now to start connecting with like-minded people and enjoy a seamless social experience!"
     }
 };
 
