@@ -19,7 +19,7 @@ export default function Navbar() {
   const linkStyle: React.CSSProperties = {
     textDecoration: 'none',
     color: 'var(--text-main)',
-    transition: 'opacity 0.2s ease',
+    transition: 'all 0.2s ease',
   };
 
   return (
@@ -27,37 +27,41 @@ export default function Navbar() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '10px 30px',
-      backgroundColor: 'var(--surface)', // Changed to variable
+      padding: '15px 40px', // Aumentado para dar mais respiro aos itens maiores
+      backgroundColor: 'var(--surface)',
       backdropFilter: 'blur(10px)',
       position: 'fixed',
-      
       top: '0',
       left: '0',
-      transform: 'none',
       width: '100%',
-      borderRadius: '0',
-      
-      maxWidth: 'none',
       zIndex: 1000,
-      boxShadow: 'var(--card-shadow)', // Changed to variable
-      borderBottom: '1px solid var(--surface-tertiary)' // Changed to variable
+      boxShadow: 'var(--card-shadow)',
+      borderBottom: '1px solid var(--surface-tertiary)'
     }}>
       
-      {/* 1. LOGO */}
+      {/* 1. LOGO AUMENTADO */}
       <Link href="/" style={{ ...linkStyle, display: 'flex', alignItems: 'center', gap: '8px', zIndex: 1001 }}>
-          <span style={{ fontWeight: 800, fontSize: '1.4rem', letterSpacing: '-0.05em', color: 'var(--text-main)' }}>
+          <span style={{ 
+            fontWeight: 800, 
+            fontSize: '1.8rem', // Aumentado de 1.4rem para 1.8rem
+            letterSpacing: '-0.05em', 
+            color: 'var(--text-main)' 
+          }}>
             GET<span style={{ color: '#FF6B00' }}>OUT</span>
           </span>
       </Link>
       
-      {/* 2. LINKS CENTRALIZADOS */}
-      <div className="desktop-only" style={{ display: 'flex', gap: '25px' }}>
+      {/* 2. LINKS CENTRALIZADOS AUMENTADOS */}
+      <div className="desktop-only" style={{ display: 'flex', gap: '35px' }}> {/* Gap aumentado para 35px */}
         {['home', 'faq', 'download', 'contact'].map((key) => (
           <Link 
             key={key} 
             href={key === 'home' ? '/' : `/${key}`} 
-            style={{ ...linkStyle, fontSize: '0.85rem', fontWeight: '500' }}
+            style={{ 
+                ...linkStyle, 
+                fontSize: '1.05rem', // Aumentado de 0.85rem para 1.05rem
+                fontWeight: '600'    // Peso da fonte aumentado para 600
+            }}
             className="hover:opacity-75 transition-opacity"
           >
             {t.navbar[key as keyof typeof t.navbar]}
@@ -66,8 +70,7 @@ export default function Navbar() {
       </div>
 
       {/* 3. AÇÕES DA DIREITA */}
-      <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-        {/* Toggle Theme Button */}
+      <div className="desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
         {mounted && (
           <button
             onClick={toggleTheme}
@@ -85,13 +88,11 @@ export default function Navbar() {
             aria-label="Toggle Dark Mode"
           >
              {theme === 'light' ? (
-                // Moon icon for light mode
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
              ) : (
-                // Sun icon for dark mode
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="5"></circle>
                   <line x1="12" y1="1" x2="12" y2="3"></line>
                   <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -107,34 +108,35 @@ export default function Navbar() {
         )}
 
         <LanguageDropdown />
+        
         <Link 
           href="/download" 
           style={{ 
             ...linkStyle,
-            backgroundColor: 'var(--text-main)', // Use text-main for contrast (black in light, white in dark)
-            color: 'var(--surface)', // Use surface for text (white in light, black in dark)
-            padding: '10px 22px', 
-            fontSize: '0.8rem',
-            fontWeight: '600',
-            borderRadius: '20px'
+            backgroundColor: 'var(--text-main)',
+            color: 'var(--surface)', 
+            padding: '12px 26px', // Botão aumentado
+            fontSize: '0.95rem',  // Fonte aumentada
+            fontWeight: '700',
+            borderRadius: '25px'
           }}
         >
           {t.navbar.download}
         </Link>
       </div>
 
-      {/* 4. AÇÕES MOBILE */}
-      <div className="mobile-only" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+      {/* 4. AÇÕES MOBILE AUMENTADAS */}
+      <div className="mobile-only" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
          <LanguageDropdown />
          
          <button 
            onClick={() => setIsOpen(!isOpen)} 
            aria-label="Toggle Menu"
-           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '5px', zIndex: 1001, display: 'flex', flexDirection: 'column', gap: '5px' }}
+           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '5px', zIndex: 1001, display: 'flex', flexDirection: 'column', gap: '6px' }}
          >
-            <div style={{ width: '22px', height: '2px', background: 'var(--text-main)', transform: isOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none', transition: '0.3s' }}></div>
-            <div style={{ width: '22px', height: '2px', background: 'var(--text-main)', opacity: isOpen ? 0 : 1, transition: '0.3s' }}></div>
-            <div style={{ width: '22px', height: '2px', background: 'var(--text-main)', transform: isOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none', transition: '0.3s' }}></div>
+            <div style={{ width: '26px', height: '2.5px', background: 'var(--text-main)', transform: isOpen ? 'rotate(45deg) translate(6px, 6px)' : 'none', transition: '0.3s' }}></div>
+            <div style={{ width: '26px', height: '2.5px', background: 'var(--text-main)', opacity: isOpen ? 0 : 1, transition: '0.3s' }}></div>
+            <div style={{ width: '26px', height: '2.5px', background: 'var(--text-main)', transform: isOpen ? 'rotate(-45deg) translate(6px, -6px)' : 'none', transition: '0.3s' }}></div>
          </button>
       </div>
 
@@ -142,59 +144,43 @@ export default function Navbar() {
       <div style={{ 
           position: 'fixed', top: 0, left: 0, width: '100%', height: '100vh', 
           background: 'var(--surface)', zIndex: 1000, 
-          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '25px',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '30px',
           visibility: isOpen ? 'visible' : 'hidden',
           opacity: isOpen ? 1 : 0,
           transform: isOpen ? 'translateY(0)' : 'translateY(-20px)', 
           transition: 'all 0.4s ease-in-out'
       }}>
-          {/* Mobile Theme Toggle */}
           {mounted && (
             <button
-            onClick={toggleTheme}
-            style={{
-              background: 'transparent',
-              border: '1px solid var(--surface-tertiary)',
-              cursor: 'pointer',
-              padding: '10px 20px',
-              borderRadius: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              color: 'var(--text-main)',
-              fontSize: '1rem',
-              marginBottom: '10px'
-            }}
-          >
-             {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-             {theme === 'light' ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-             ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="5"></circle>
-                  <line x1="12" y1="1" x2="12" y2="3"></line>
-                  <line x1="12" y1="21" x2="12" y2="23"></line>
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                  <line x1="1" y1="12" x2="3" y2="12"></line>
-                  <line x1="21" y1="12" x2="23" y2="12"></line>
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-             )}
+              onClick={toggleTheme}
+              style={{
+                background: 'transparent',
+                border: '1px solid var(--surface-tertiary)',
+                cursor: 'pointer',
+                padding: '12px 25px',
+                borderRadius: '25px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                color: 'var(--text-main)',
+                fontSize: '1.1rem',
+                marginBottom: '15px'
+              }}
+            >
+               {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
             </button>
           )}
 
-          <Link href="/" style={{ ...linkStyle, fontSize: '1.5rem', fontWeight: '700' }} onClick={() => setIsOpen(false)}>{t.navbar.home}</Link>
-          <Link href="/faq" style={{ ...linkStyle, fontSize: '1.5rem', fontWeight: '700' }} onClick={() => setIsOpen(false)}>{t.navbar.faq}</Link>
-          <Link href="/download" style={{ ...linkStyle, fontSize: '1.5rem', fontWeight: '700' }} onClick={() => setIsOpen(false)}>{t.navbar.download}</Link>
-          <Link href="/contact" style={{ ...linkStyle, fontSize: '1.5rem', fontWeight: '700' }} onClick={() => setIsOpen(false)}>{t.navbar.contact}</Link>
-          <div style={{ width: '40px', height: '1px', background: 'var(--surface-tertiary)', margin: '10px 0' }} />
+          <Link href="/" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.home}</Link>
+          <Link href="/faq" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.faq}</Link>
+          <Link href="/download" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.download}</Link>
+          <Link href="/contact" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.contact}</Link>
+          
+          <div style={{ width: '60px', height: '2px', background: 'var(--surface-tertiary)', margin: '15px 0' }} />
+          
           <Link 
             href="/download" 
-            style={{ ...linkStyle, backgroundColor: '#FF6B00', color: '#fff', padding: '14px 35px', borderRadius: '30px', fontWeight: '700' }}
+            style={{ ...linkStyle, backgroundColor: '#FF6B00', color: '#fff', padding: '16px 45px', borderRadius: '35px', fontWeight: '800', fontSize: '1.2rem' }}
             onClick={() => setIsOpen(false)}
           >
             {t.navbar.download}
