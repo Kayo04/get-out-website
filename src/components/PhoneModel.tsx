@@ -4,8 +4,8 @@ import React, { useMemo } from "react";
 import { useTexture, RoundedBox } from "@react-three/drei";
 import { Shape, Path, DoubleSide } from "three";
 
-export default function PhoneModel() {
-  const texture = useTexture("/assets/app-de-frente.png");
+export default function PhoneModel({ image = "/assets/Home.jpg" }) {
+  const texture = useTexture(image);
 
   // Create the phone shapes
   const { solidShape, hollowShape } = useMemo(() => {

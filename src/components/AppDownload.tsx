@@ -56,13 +56,13 @@ export default function AppDownloadSection() {
             <Center>
               <group scale={1.3} position={[0, -0.5, 0]}> 
                 <group position={[-6.5, -0.5, -3]} rotation={[0, 0.5, 0.1]}>
-                  <PhoneModel />
+                  <PhoneModel image="/assets/Event.jpg" />
                 </group>
                 <group position={[0, 0.5, 0]} rotation={[0, 0, 0]}>
-                  <PhoneModel />
+                  <PhoneModel image="/assets/Home.jpg" />
                 </group>
                 <group position={[6.5, -0.5, -3]} rotation={[0, -0.5, -0.1]}>
-                  <PhoneModel />
+                  <PhoneModel image="/assets/Code.jpg" />
                 </group>
               </group>
             </Center>
