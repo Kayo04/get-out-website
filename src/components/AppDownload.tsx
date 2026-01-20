@@ -16,14 +16,14 @@ export default function AppDownloadSection() {
       style={{ 
         backgroundColor: 'var(--surface)', 
         color: 'var(--text-main)', 
-        padding: '120px 20px 0 20px', 
+        padding: '60px 20px 0 20px', 
         display: 'flex', 
         flexDirection: 'column', 
         alignItems: 'center',
         textAlign: 'center',
         overflow: 'hidden',
         position: 'relative',
-        minHeight: '110vh',
+        minHeight: 'auto',
         transition: 'background-color 0.3s ease'
       }}
     >
@@ -54,7 +54,7 @@ export default function AppDownloadSection() {
           
           <Suspense fallback={null}>
             <Center>
-              <group scale={0.9} position={[0, 0, 0]}> 
+              <group scale={1.3} position={[0, -0.5, 0]}> 
                 <group position={[-6.5, -0.5, -3]} rotation={[0, 0.5, 0.1]}>
                   <PhoneModel />
                 </group>

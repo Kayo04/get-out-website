@@ -30,10 +30,9 @@ export default function Footer() {
       transition: 'background-color 0.3s ease'
     }}>
       
-      {/* GRADIENTES E GLOWS (Mantidos conforme anterior) */}
-      {isDarkMode && <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '150px', background: 'linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0) 100%)', zIndex: 1, opacity: 0.15 }} />}
 
-      <footer style={{ position: 'relative', zIndex: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '60px 20px 40px 20px', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+
+      <footer style={{ position: 'relative', zIndex: 3, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px 20px 40px 20px', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
         
         {/* LOGO E SLOGAN */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>

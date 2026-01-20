@@ -49,7 +49,6 @@ export default function LaunchCountdown() {
     <section className="section" style={{
       padding: '80px 0',
       position: 'relative',
-      background: 'radial-gradient(circle at 50% 50%, rgba(255, 107, 0, 0.03) 0%, transparent 70%)'
     }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '60px', position: 'relative', zIndex: 10 }}>
