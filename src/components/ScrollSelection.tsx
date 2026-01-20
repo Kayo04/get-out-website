@@ -1,123 +1,136 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import Image from "next/image"; // Otimização de imagem do Next.js
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const STEPS = [
   {
     step: "Passo 1",
     title: "Planeia a tua visão",
-    desc: "Cria eventos estruturados e substitui as conversas fragmentadas.",
+    desc: "Começa por criar eventos estruturados que substituem as conversas fragmentadas de grupo. Define o local, a hora e os detalhes importantes num só sítio, garantindo que toda a gente está na mesma página desde o primeiro momento.",
     color: "#8B5CF6",
-    image: "/Home.jpg", // Caminho relativo à pasta public
+    image: "/assets/Home.jpg",
   },
   {
     step: "Passo 2",
     title: "Escolhe o Estilo",
-    desc: "Seleciona entre dezenas de estilos artísticos e refinamentos.",
+    desc: "Personaliza a aparência do teu evento selecionando entre dezenas de estilos artísticos e refinamentos visuais. Torna cada convite único e memorável, adaptado à vibe da tua festa ou encontro.",
     color: "#EC4899",
     image: "/assets/Event.jpg",
   },
   {
     step: "Passo 3",
     title: "Gera e Partilha",
-    desc: "Vê a tua visão ganhar vida em segundos e partilha com o mundo.",
+    desc: "Vê a tua visão ganhar vida em segundos. Com um clique, gera o evento e partilha o link com o mundo ou apenas com os teus amigos próximos. Gere as confirmações em tempo real e aproveita o momento.",
     color: "#3B82F6",
     image: "/assets/Code.jpg",
   },
 ];
 
 export default function ScrollSection() {
+  const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  // Function to handle scroll and update active step
+  useEffect(() => {
+    const handleScroll = () => {
+      const stepElements = document.querySelectorAll(".scroll-step");
+      stepElements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        // Check if the element is in the vertical center of the viewport
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          setActiveStep(index);
+        }
+      });
+    };
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-  });
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <main className="bg-white">
-      {/* Espaçador Inicial */}
-      <div className="h-screen flex items-center justify-center bg-slate-50">
-        <h1 className="text-2xl text-slate-400">Scroll para ver o efeito ↓</h1>
-      </div>
+    <div style={{ backgroundColor: 'var(--surface)' }}>
+      {/* 2-Column Layout */}
 
-      <section ref={containerRef} className="relative h-[300vh]">
-        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-10 items-center">
-            
-            {/* Mockup do Telemóvel */}
-            <div className="relative flex justify-center items-center h-[600px]">
-              
-              {/* Moldura */}
-              <div className="relative w-[280px] h-[570px] bg-black rounded-[3rem] border-[8px] border-slate-900 shadow-2xl overflow-hidden z-10">
-                {STEPS.map((step, i) => {
-                  const start = i / STEPS.length;
-                  const end = (i + 1) / STEPS.length;
+      <section className="container mx-auto px-4 relative">
+        <div className="grid grid-cols-2 gap-0 items-start">
+          
+          {/* Left Column: Sticky Phone */}
+          {/* Direct sticky child of the grid container */}
+          <div className="sticky top-[80px] h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
+                {/* Phone Component */}
+                <div className="relative w-[300px] h-[600px] flex items-center justify-center flex-shrink-0 scale-90 lg:scale-100 z-40">
                   
-                  // eslint-disable-next-line react-hooks/rules-of-hooks
-                  const opacity = useTransform(smoothProgress, [start, start + 0.1, end - 0.1, end], [0, 1, 1, 0]);
+                {/* Hand Background */}
+                <div className="absolute inset-0 z-10 pointer-events-none">
+                  <Image 
+                    src="/assets/maofixe.png" 
+                    alt="Hand holding phone" 
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    priority
+                  />
+                </div>
 
-                  return (
-                    <motion.div key={i} className="absolute inset-0" style={{ opacity }}>
+                {/* Screen Content (Foreground) */}
+                <div 
+                  className="absolute w-[220px] h-[460px] bg-black rounded-[1.5rem] overflow-hidden z-20"
+                  style={{ top: '70px' }} // Adjusted top to sit inside the phone screen area
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeStep}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="relative w-full h-full"
+                    >
                       <Image 
-                        src={step.image} 
-                        alt={step.title} 
+                        src={STEPS[activeStep].image} 
+                        alt={STEPS[activeStep].title} 
                         fill 
                         className="object-cover"
                       />
                     </motion.div>
-                  );
-                })}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl z-20" />
-              </div>
-
-              {/* Mão (Sobreposta) */}
-              <div className="absolute -bottom-10 left-1/2 -translate-x-[48%] w-[420px] z-30 pointer-events-none">
-                <Image 
-                  src="/assets/maofixe.png" 
-                  alt="Mão" 
-                  width={420} 
-                  height={500} 
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Coluna de Texto */}
-            <div className="relative h-[400px]">
-              {STEPS.map((step, i) => {
-                const start = i / STEPS.length;
-                const end = (i + 1) / STEPS.length;
-
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                const opacity = useTransform(smoothProgress, [start, start + 0.1, end - 0.1, end], [0, 1, 1, 0]);
-                // eslint-disable-next-line react-hooks/rules-of-hooks
-                const y = useTransform(smoothProgress, [start, start + 0.1, end - 0.1, end], [60, 0, 0, -60]);
-
-                return (
-                  <motion.div key={i} className="absolute inset-0 flex flex-col justify-center" style={{ opacity, y }}>
-                    <span className="px-4 py-1 rounded-full text-white text-xs font-bold w-fit mb-4" style={{ backgroundColor: step.color }}>
-                      {step.step}
-                    </span>
-                    <h2 className="text-5xl font-black text-slate-900">{step.title}</h2>
-                    <p className="mt-6 text-lg text-slate-500">{step.desc}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
-
+                  </AnimatePresence>
+                </div>
+                </div>
           </div>
+
+          {/* Right Column: Scrolling Text */}
+          <div className="relative z-10 flex flex-col justify-center">
+             {/* Mobile: Phone shows up here or above? Usually Hidden or static on mobile. 
+                 The user asked for a specific layout, assuming desktop for "Image on Left, Text on Right".
+                 I'll simplify mobile to just show text blocks for now. */}
+            
+            {STEPS.map((step, index) => (
+              <div 
+                key={index} 
+                className="scroll-step min-h-screen flex flex-col justify-center p-8 lg:p-16"
+              >
+                <div 
+                  className="inline-block px-4 py-1 rounded-full text-white text-sm font-bold mb-6 w-fit" 
+                  style={{ backgroundColor: step.color }}
+                >
+                  {step.step}
+                </div>
+                <h2 className="text-4xl lg:text-6xl font-black mb-6" style={{ color: 'var(--text-main)', lineHeight: 1.1 }}>
+                  {step.title}
+                </h2>
+                <p className="text-lg lg:text-xl leading-relaxed max-w-lg" style={{ color: 'var(--text-dim)' }}>
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
-
-      <div className="h-screen bg-slate-900" />
-    </main>
+      
+      {/* Spacer for bottom */}
+      <div className="h-[20vh]" />
+    </div>
   );
 }

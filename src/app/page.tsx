@@ -153,7 +153,7 @@ export default function Home() {
 
         <LaunchCountdown />
         <Feature/>
-        <AppShowcase />
+        {/*<AppShowcase />*/}
         <ScrollSection/>
         <Testimonials />
         <AppDownloadSection />
