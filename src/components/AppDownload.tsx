@@ -5,15 +5,17 @@ import { Canvas } from "@react-three/fiber";
 import { Environment, Center } from "@react-three/drei";
 import PhoneModel from "./PhoneModel";
 
+import { useTheme } from "@/context/ThemeContext";
+
 export default function AppDownloadSection() {
-  // Simulação de uma variável de estado para o modo (podes ligar ao teu sistema de Dark Mode)
-  const isDarkMode = false; // Muda para true para ver o efeito no preto
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
 
   return (
     <section 
       style={{ 
-        backgroundColor: isDarkMode ? '#000000' : '#FFFFFF', 
-        color: isDarkMode ? '#FFFFFF' : '#000000', 
+        backgroundColor: 'var(--surface)', 
+        color: 'var(--text-main)', 
         padding: '120px 20px 0 20px', 
         display: 'flex', 
         flexDirection: 'column', 
@@ -30,7 +32,7 @@ export default function AppDownloadSection() {
         <h2 style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.1', marginBottom: '24px' }}>
           Download GetOut <br /> Social and Connect Today
         </h2>
-        <p style={{ color: isDarkMode ? '#888' : '#666', fontSize: '18px', maxWidth: '550px', margin: '0 auto 40px auto' }}>
+        <p style={{ color: 'var(--text-dim)', fontSize: '18px', maxWidth: '550px', margin: '0 auto 40px auto' }}>
           Download GetOut now to start connecting with like-minded people and enjoy a seamless social experience!
         </p>
 
@@ -76,7 +78,7 @@ export default function AppDownloadSection() {
             left: 0,
             width: '100%',
             height: '300px',
-            background: 'linear-gradient(to top, #000000 20%, transparent 100%)',
+            background: 'linear-gradient(to top, var(--surface) 20%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 5
           }} />

@@ -27,15 +27,15 @@ export default function AppShowcase() {
           <div style={{ display: 'flex', justifyContent: 'center', order: 2 }}>
             <div className="phone-mockup" style={{ 
                 width: '300px', height: '600px', 
-                background: '#1a1f2c', borderRadius: '40px', 
-                border: '8px solid #2e3440', position: 'relative',
+                background: 'var(--surface-secondary)', borderRadius: '40px', 
+                border: '8px solid var(--surface-tertiary)', position: 'relative',
                 boxShadow: '0 30px 60px rgba(0,0,0,0.2)', overflow: 'hidden',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
                 {/* Notch */}
-                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '120px', height: '30px', background: '#2e3440', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px', zIndex: 10 }}></div>
+                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '120px', height: '30px', background: 'var(--surface-tertiary)', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px', zIndex: 10 }}></div>
                 
-                <div style={{ color: 'white', fontSize: '1.2rem', padding: '20px', textAlign: 'center', border: '2px dashed rgba(255,255,255,0.3)', borderRadius: '10px' }}>
+                <div style={{ color: 'var(--text-main)', fontSize: '1.2rem', padding: '20px', textAlign: 'center', border: '2px dashed var(--text-dim)', borderRadius: '10px' }}>
                     meter foto de Criar Evento
                 </div>
             </div>
@@ -44,22 +44,22 @@ export default function AppShowcase() {
       </section>
 
       {/* SECTION 2: ATTEND (Phone Left, Text Right) */}
-      <section className="section" style={{ background: 'var(--surface-secondary)' }}>
+      <section className="section">
         <div className="container grid-2">
           
           {/* Visual: Phone Mockup (Events) */}
           <div style={{ display: 'flex', justifyContent: 'center', order: 1 }}>
             <div className="phone-mockup" style={{ 
                 width: '300px', height: '600px', 
-                background: 'white', borderRadius: '40px', 
-                border: '8px solid #cbd5e1', position: 'relative',
+                background: 'var(--surface)', borderRadius: '40px', 
+                border: '8px solid var(--surface-tertiary)', position: 'relative',
                 boxShadow: '0 30px 60px rgba(0,0,0,0.1)', overflow: 'hidden',
                  display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>
                 {/* Notch */}
-                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '120px', height: '30px', background: '#cbd5e1', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px', zIndex: 10 }}></div>
+                <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '120px', height: '30px', background: 'var(--surface-tertiary)', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px', zIndex: 10 }}></div>
                 
-                <div style={{ color: 'var(--text-main)', fontSize: '1.2rem', padding: '20px', textAlign: 'center', border: '2px dashed #94a3b8', borderRadius: '10px' }}>
+                <div style={{ color: 'var(--text-main)', fontSize: '1.2rem', padding: '20px', textAlign: 'center', border: '2px dashed var(--text-dim)', borderRadius: '10px' }}>
                     meter foto de eventos
                 </div>
             </div>

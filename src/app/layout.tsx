@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google"; // 1. Import new font
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 // 2. Configure the font
 const jakarta = Plus_Jakarta_Sans({
@@ -31,9 +34,13 @@ export default function RootLayout({
     <html lang="en">
       {/* 3. Apply the variable and class name */}
       <body className={jakarta.className}>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

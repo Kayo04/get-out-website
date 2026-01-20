@@ -9,15 +9,15 @@ export default function PhoneScene() {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <Canvas camera={{ position: [0, 0, 9], fov: 45 }}>
-        <ambientLight intensity={0.7} />
-        <spotLight position={[10, 10, 10]} angle={0.3} penumbra={1} intensity={2} castShadow />
-        <pointLight position={[-10, -5, -10]} intensity={1} color="#44aaff" />
+        <ambientLight intensity={1.5} />
+        <spotLight position={[10, 10, 10]} angle={0.3} penumbra={1} intensity={3} castShadow />
+        <pointLight position={[-10, 5, -10]} intensity={2} color="#ffffff" />
         
         <Suspense fallback={null}>
           <Float speed={2.5} rotationIntensity={0.5} floatIntensity={1.5} floatingRange={[-0.2, 0.2]}>
             <PhoneModel />
           </Float>
-          <Environment preset="night" />
+          <Environment preset="city" />
         </Suspense>
         
         <OrbitControls 

@@ -27,6 +27,7 @@
   --accent: #2e3440;
   --curve: 24px;
   --nav-height: 80px;
+  --border-color: #edf2f7;
 
   /* Shadows */
   --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
@@ -35,6 +36,30 @@
   /* Fonts */
   --font-body: var(--font-jakarta), sans-serif;
   --font-display: var(--font-jakarta), sans-serif;
+}
+
+/* DARK MODE OVERRIDES */
+html.dark {
+  /* Surfaces */
+  --surface: #0f1115;
+  --surface-secondary: #1a1f2c;
+  --surface-tertiary: #2e3440;
+
+  /* Text */
+  --text-main: #ffffff;
+  --text-dim: #94a3b8;
+  --text-invert: #000000;
+
+  /* UI */
+  --border-color: #2e3440;
+
+  /* Shadows - lighter for dark mode visibility or just different */
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --card-shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+
+  /* UI overrides for dark mode specific elements if needed */
+  background-color: var(--surface);
+  color: var(--text-main);
 }
 
 @media (min-width: 992px) {
@@ -155,7 +180,7 @@ body {
 ========================= */
 .glass-card {
   background: var(--surface);
-  border: 1px solid #edf2f7;
+  border: 1px solid var(--border-color);
   padding: 40px;
   border-radius: var(--curve);
   box-shadow: var(--card-shadow);

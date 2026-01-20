@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import PhoneScene from "@/components/PhoneScene";
 import Testimonials from "@/components/Testimonials";
 import AppShowcase from "@/components/AppShowcase";
@@ -15,9 +13,7 @@ export default function Home() {
   const { t } = useLanguage();
 
   return (
-    <>
-      <Navbar />
-      <main style={{ backgroundColor: '#fff' }}>
+    <main style={{ backgroundColor: 'var(--surface)', transition: 'background-color 0.3s ease' }}>
         {/* HERO SECTION */}
         <section style={{ 
           minHeight: '100vh', 
@@ -26,7 +22,7 @@ export default function Home() {
           paddingTop: '80px',
           position: 'relative',
           overflow: 'hidden',
-          background: 'radial-gradient(circle at 90% 20%, rgba(255, 107, 0, 0.05) 0%, transparent 40%)'
+          // Use a variable or conditional gradient if needed, but for now lets keep it subtle or adjust opacity
         }}>
           
           <div className="container grid-2" style={{ alignItems: 'center' }}>
@@ -35,7 +31,7 @@ export default function Home() {
             <div style={{ zIndex: 10 }}>
               {/* Subtítulo em Azul */}
               <h4 style={{ 
-                color: '#0066CC', 
+                color: 'var(--secondary)', 
                 letterSpacing: '0.05em', 
                 marginBottom: '1.5rem', 
                 fontWeight: 700,
@@ -50,17 +46,17 @@ export default function Home() {
                 fontSize: 'clamp(3rem, 6vw, 5rem)', 
                 lineHeight: '1',
                 fontWeight: 800,
-                color: '#1A1F2C',
+                color: 'var(--text-main)',
                 marginBottom: '1.5rem'
               }}>
                 {t.hero.title_start} <br />
-                <span style={{ color: '#FF6B00' }}>{t.hero.title_end}</span>
+                <span style={{ color: 'var(--primary)' }}>{t.hero.title_end}</span>
               </h1>
               
               {/* Descrição com cor mais suave */}
               <p style={{ 
                 fontSize: '1.1rem', 
-                color: '#64748B', 
+                color: 'var(--text-dim)', 
                 lineHeight: '1.6',
                 maxWidth: '520px',
                 marginBottom: '2.5rem'
@@ -71,7 +67,7 @@ export default function Home() {
               {/* Botões - Um Laranja e outro Azul Claro */}
               <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
                 <Link href="/download" className="btn btn-primary" style={{ 
-                  backgroundColor: '#FF6B00',
+                  backgroundColor: 'var(--primary)',
                   color: '#fff',
                   padding: '16px 36px',
                   borderRadius: '12px',
@@ -84,8 +80,8 @@ export default function Home() {
                 </Link>
                 
                 <Link href="/features" style={{ 
-                  backgroundColor: '#F0F7FF',
-                  color: '#0066CC',
+                  backgroundColor: 'var(--surface-secondary)',
+                  color: 'var(--secondary)',
                   padding: '16px 30px',
                   borderRadius: '12px',
                   textDecoration: 'none',
@@ -99,12 +95,12 @@ export default function Home() {
               {/* Stats com design minimalista */}
               <div style={{ marginTop: '4rem', display: 'flex', gap: '50px' }}>
                    <div>
-                     <h3 style={{ fontSize: '2.2rem', fontWeight: 800, margin: 0, color: '#1A1F2C' }}>1.2M+</h3>
-                     <p style={{ color: '#64748B', fontSize: '0.9rem', margin: 0 }}>{t.hero.stats_users}</p>
+                     <h3 style={{ fontSize: '2.2rem', fontWeight: 800, margin: 0, color: 'var(--text-main)' }}>1.2M+</h3>
+                     <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', margin: 0 }}>{t.hero.stats_users}</p>
                    </div>
                    <div>
-                     <h3 style={{ fontSize: '2.2rem', fontWeight: 800, margin: 0, color: '#1A1F2C' }}>85k+</h3>
-                     <p style={{ color: '#64748B', fontSize: '0.9rem', margin: 0 }}>{t.hero.stats_venues}</p>
+                     <h3 style={{ fontSize: '2.2rem', fontWeight: 800, margin: 0, color: 'var(--text-main)' }}>85k+</h3>
+                     <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', margin: 0 }}>{t.hero.stats_venues}</p>
                    </div>
               </div>
             </div>
@@ -130,7 +126,5 @@ export default function Home() {
         <Testimonials />
         <AppDownloadSection />
       </main>
-      <Footer />
-    </>
   );
 }

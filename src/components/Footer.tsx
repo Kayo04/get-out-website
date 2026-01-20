@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 
-interface FooterProps {
-  isDarkMode?: boolean; // Propriedade para alternar entre os modos
-}
+import { useTheme } from "@/context/ThemeContext";
 
-export default function Footer({ isDarkMode = false }: FooterProps) {
+export default function Footer() {
+  const { theme } = useTheme();
+  const isDarkMode = theme === 'dark';
   return (
     <div style={{ 
       position: 'relative', 
       width: '100%', 
       // No modo claro é branco, no dark é preto
-      backgroundColor: isDarkMode ? '#000000' : '#FFFFFF', 
+      backgroundColor: 'var(--surface)', 
       overflow: 'hidden',
       transition: 'background-color 0.3s ease'
     }}>
@@ -95,11 +95,11 @@ export default function Footer({ isDarkMode = false }: FooterProps) {
             display: 'flex', 
             alignItems: 'center', 
             gap: '10px',
-            backgroundColor: isDarkMode ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.05)',
-            border: `1px solid ${isDarkMode ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.1)'}`,
+            backgroundColor: isDarkMode ? 'var(--surface-secondary)' : 'rgba(0,0,0,0.05)',
+            border: `1px solid ${isDarkMode ? 'var(--surface-tertiary)' : 'rgba(0,0,0,0.1)'}`,
             padding: '14px 32px', 
             borderRadius: '12px',
-            color: isDarkMode ? 'white' : 'black',
+            color: 'var(--text-main)',
             textDecoration: 'none',
             fontSize: '15px',
             fontWeight: '500',

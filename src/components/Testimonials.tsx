@@ -112,7 +112,7 @@ export default function Testimonials() {
                         onClick={() => setActiveIndex(i)}
                         style={{ 
                             width: '8px', height: '8px', borderRadius: '50%', 
-                            background: i === activeIndex ? 'var(--primary)' : '#cbd5e1',
+                            background: i === activeIndex ? 'var(--primary)' : 'var(--surface-tertiary)',
                             cursor: 'pointer',
                             transition: 'all 0.3s ease'
                         }} 

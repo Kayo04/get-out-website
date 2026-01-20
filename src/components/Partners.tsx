@@ -10,7 +10,7 @@ export default function Partners() {
   ];
 
   return (
-    <section style={{ padding: '60px 0', borderBottom: '1px solid var(--glass-border)', background: 'rgba(255,255,255,0.02)' }}>
+    <section style={{ padding: '60px 0', borderBottom: '1px solid var(--border-color)', background: 'rgba(255,255,255,0.02)' }}>
       <div className="container">
         <p style={{ 
             textAlign: 'center', 
