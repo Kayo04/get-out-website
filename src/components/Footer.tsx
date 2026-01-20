@@ -1,87 +1,144 @@
 "use client";
 
 import Link from "next/link";
-import { useLanguage } from "@/context/LanguageContext";
 
-export default function Footer() {
-  const { t } = useLanguage();
+interface FooterProps {
+  isDarkMode?: boolean; // Propriedade para alternar entre os modos
+}
 
+export default function Footer({ isDarkMode = false }: FooterProps) {
   return (
-    <footer style={{ borderTop: '1px solid var(--glass-border)', padding: '80px 0', background: 'var(--surface-secondary)' }}>
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
-            
-            {/* 1. Brand & Motto */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-               <h3 style={{ 
-                 fontWeight: 800, 
-                 fontSize: '1.8rem', 
-                 letterSpacing: '-0.05em', 
-                 color: 'var(--secondary)',
-                 margin: 0
-               }}>
-                 GET<span style={{ color: 'var(--primary)' }}>OUT</span>
-               </h3>
-               <p style={{ fontSize: '0.95rem', color: 'var(--text-dim)', lineHeight: '1.6', maxWidth: '300px' }}>
-                 {t.footer.motto}
-               </p>
-               {/* Socials moved here for cleaner look */}
-               <div style={{ display: 'flex', gap: '15px' }}>
-                 {['X', 'LinkedIn', 'Instagram'].map((platform) => (
-                   <a key={platform} href="#" style={{ color: 'var(--text-dim)', fontSize: '1.2rem', transition: 'color 0.2s' }}>
-                     <i className={`icon-${platform.toLowerCase()}`} /> {/* Placeholder icons */}
-                     {platform}
-                   </a>
-                 ))}
-               </div>
-            </div>
+    <div style={{ 
+      position: 'relative', 
+      width: '100%', 
+      // No modo claro é branco, no dark é preto
+      backgroundColor: isDarkMode ? '#000000' : '#FFFFFF', 
+      overflow: 'hidden',
+      transition: 'background-color 0.3s ease'
+    }}>
+      
+      {/* EFEITO DE TRANSIÇÃO (FADE-OUT BRANCO) - SÓ APARECE NO DARK MODE */}
+      {isDarkMode && (
+        <div 
+          style={{ 
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '300px', // Altura do gradiente de transição
+            background: 'linear-gradient(to bottom, #FFFFFF 0%, rgba(255,255,255,0) 100%)',
+            zIndex: 1,
+            opacity: 0.15 // Ajusta a intensidade do "fade" aqui
+          }} 
+        />
+      )}
 
-            {/* 2. Product Column */}
-            <div>
-              <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                {t.footer.product}
-              </h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                 <li><Link href="/features" style={{ color: 'var(--text-dim)', textDecoration: 'none', fontSize: '0.95rem' }}>{t.footer.links.features}</Link></li>
-                 <li><Link href="/download" style={{ color: 'var(--text-dim)', textDecoration: 'none', fontSize: '0.95rem' }}>{t.footer.links.download}</Link></li>
-              </ul>
-            </div>
+      {/* GLOW EFFECT (Apenas no Dark Mode para dar profundidade) */}
+      {isDarkMode && (
+        <div 
+          style={{ 
+            position: 'absolute',
+            top: '-100px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '1000px',
+            height: '400px',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%)',
+            filter: 'blur(80px)',
+            pointerEvents: 'none',
+            zIndex: 2
+          }} 
+        />
+      )}
 
-            {/* 3. Company Column */}
-            <div>
-              <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                {t.footer.company}
-              </h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                 <li><Link href="/about" style={{ color: 'var(--text-dim)', textDecoration: 'none', fontSize: '0.95rem' }}>{t.footer.links.about}</Link></li>
-                 <li><Link href="/contact" style={{ color: 'var(--text-dim)', textDecoration: 'none', fontSize: '0.95rem' }}>{t.footer.links.contact}</Link></li>
-              </ul>
-            </div>
-
-            {/* 4. Legal Column */}
-            <div>
-              <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                {t.footer.legal}
-              </h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                 <li><Link href="/privacy" style={{ color: 'var(--text-dim)', textDecoration: 'none', fontSize: '0.95rem' }}>{t.footer.links.privacy}</Link></li>
-                 <li><Link href="#" style={{ color: 'var(--text-dim)', textDecoration: 'none', fontSize: '0.95rem' }}>{t.footer.links.terms}</Link></li>
-              </ul>
-            </div>
-
-        </div>
+      <footer 
+        style={{ 
+          position: 'relative',
+          zIndex: 3,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '120px 20px',
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}
+      >
         
-        <div style={{ 
-          marginTop: '80px', 
-          paddingTop: '40px', 
-          borderTop: '1px solid rgba(0,0,0,0.05)', 
-          textAlign: 'center', 
-          fontSize: '0.85rem', 
-          color: 'var(--text-dim)' 
-        }}>
-           &copy; {new Date().getFullYear()} Get Out. {t.footer.copyright}
+        {/* LOGO - Cor muda conforme o modo */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill={isDarkMode ? "white" : "black"}>
+            <path d="M12 2L2 22H22L12 2Z" />
+          </svg>
+          <span style={{ 
+            color: isDarkMode ? 'white' : 'black', 
+            fontSize: '24px', 
+            fontWeight: 'bold' 
+          }}>GetOut</span>
         </div>
-      </div>
-    </footer>
+
+        {/* SLOGAN - Cor muda conforme o modo */}
+        <h3 style={{ 
+          color: isDarkMode ? 'white' : '#111', 
+          textAlign: 'center', 
+          fontSize: '22px', 
+          fontWeight: '500', 
+          marginBottom: '40px'
+        }}>
+          Empower Your Social Connections <br /> with GetOut App
+        </h3>
+
+        {/* BOTÃO DE EMAIL */}
+        <a 
+          href="mailto:hello@getout.com"
+          style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '10px',
+            backgroundColor: isDarkMode ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.05)',
+            border: `1px solid ${isDarkMode ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.1)'}`,
+            padding: '14px 32px', 
+            borderRadius: '12px',
+            color: isDarkMode ? 'white' : 'black',
+            textDecoration: 'none',
+            fontSize: '15px',
+            fontWeight: '500',
+            marginBottom: '70px',
+            transition: 'all 0.3s ease'
+          }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={isDarkMode ? "white" : "black"} strokeWidth="2">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          hello@getout.com
+        </a>
+
+        {/* LINKS */}
+        <nav style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '35px' }}>
+          {['Benefits', 'Features', 'Pricing', 'Testimonials', 'FAQ', 'Waitlist'].map((item) => (
+            <Link 
+              key={item} 
+              href={`#${item.toLowerCase()}`}
+              style={{ 
+                color: isDarkMode ? '#888' : '#666', 
+                textDecoration: 'none', 
+                fontSize: '13px', 
+                fontWeight: '600', 
+                textTransform: 'uppercase', 
+                letterSpacing: '1.5px' 
+              }}
+            >
+              {item}
+            </Link>
+          ))}
+        </nav>
+
+        <p style={{ color: isDarkMode ? '#444' : '#999', fontSize: '12px', marginTop: '60px' }}>
+          © 2026 GetOut Social. All rights reserved.
+        </p>
+
+      </footer>
+    </div>
   );
 }

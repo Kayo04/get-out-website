@@ -1,94 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   DESIGN TOKENS
+========================= */
 :root {
-  /* ORANGE & BLUE Professional Palette */
-  --background: #ffffff;
+  /* Surfaces */
   --surface: #ffffff;
   --surface-secondary: #f4f7fa;
   --surface-tertiary: #e2e8f0;
-  /* Light blue-grey for alternate sections */
 
+  /* Brand */
   --primary: #ff6b00;
-  /* Vibrant Orange */
   --primary-glow: rgba(255, 107, 0, 0.25);
 
   --secondary: #0066cc;
-  /* Trustworthy Blue */
   --secondary-glow: rgba(0, 102, 204, 0.2);
 
-  --accent: #2e3440;
-  /* Dark Charcoal for neutral accents */
-
+  /* Text */
   --text-main: #1a1f2c;
-  /* Deep Navy Blue/Black for text */
   --text-dim: #64748b;
-  /* Slate Grey for subtext */
+  --text-invert: #ffffff;
 
-  --font-body: var(--font-jakarta), sans-serif;
-  --font-display: var(--font-jakarta), sans-serif;
+  /* UI */
+  --accent: #2e3440;
+  --curve: 24px;
+  --nav-height: 80px;
 
+  /* Shadows */
   --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
   --card-shadow-hover: 0 20px 40px -10px rgba(0, 102, 204, 0.15);
 
-  --curve: 24px;
-  --nav-height: 80px;
+  /* Fonts */
+  --font-body: var(--font-jakarta), sans-serif;
+  --font-display: var(--font-jakarta), sans-serif;
+}
+
+@media (min-width: 992px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* No Telemóvel (max-width: 991px), esconde tudo o que for exclusivo de desktop */
+@media (max-width: 991px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+/* Remove sublinhados de todos os links da Navbar */
+.navbar-float a {
+  text-decoration: none !important;
+}
+
+/* =========================
+   BASE RESET (MINIMAL)
+========================= */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--text-main);
-  font-family: var(--font-body);
   margin: 0;
-  padding: 0;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--surface);
   overflow-x: hidden;
-  /* Abstract modern shapes */
+
   background-image:
     radial-gradient(circle at 0% 0%, rgba(255, 107, 0, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 100% 100%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none !important;
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
+.heading-1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
 }
 
-h1,
-h2,
-h3,
-h4 {
+.heading-2 {
   font-family: var(--font-display);
-  margin: 0 0 1rem 0;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
   font-weight: 800;
-  color: var(--text-main);
   letter-spacing: -0.02em;
 }
 
-h1 {
-  font-size: 5rem;
-  line-height: 0.9;
-}
-
-h2 {
-  font-size: 2.8rem;
-}
-
-h3 {
+.heading-3 {
   font-size: 1.5rem;
-  line-height: 1.4;
+  font-weight: 700;
 }
 
-p {
-  color: var(--text-dim);
-  font-size: 1.15rem;
+.text-body {
+  font-size: 1.05rem;
   line-height: 1.7;
+  color: var(--text-dim);
   max-width: 60ch;
-  margin-bottom: 2rem;
 }
 
-/* Utilities */
+.text-small {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+/* =========================
+   LINKS
+========================= */
+.link {
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
 .container {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
@@ -106,21 +150,9 @@ p {
   align-items: center;
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--primary) 0%, #ff9500 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-blue {
-  background: linear-gradient(135deg, var(--secondary) 0%, #00aaff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Modern Clean Card */
+/* =========================
+   COMPONENTS
+========================= */
 .glass-card {
   background: var(--surface);
   border: 1px solid #edf2f7;
@@ -128,20 +160,6 @@ p {
   border-radius: var(--curve);
   box-shadow: var(--card-shadow);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--primary);
-  opacity: 0;
-  transition: opacity 0.3s;
 }
 
 .glass-card:hover {
@@ -149,24 +167,18 @@ p {
   box-shadow: var(--card-shadow-hover);
 }
 
-.glass-card:hover::before {
-  opacity: 1;
-}
-
-/* Buttons */
+/* =========================
+   BUTTONS
+========================= */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 40px;
+  padding: 16px 36px;
   border-radius: 12px;
-  /* Less rounded, more professional */
   font-weight: 700;
-  font-size: 1rem;
   cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: none;
+  transition: all 0.25s ease;
 }
 
 .btn-primary {
@@ -178,155 +190,54 @@ p {
 .btn-primary:hover {
   transform: translateY(-2px);
   background: #ff5500;
-  box-shadow: 0 12px 30px var(--primary-glow);
 }
 
-.btn-blue {
-  background: var(--surface-secondary);
-  color: var(--secondary);
-  font-weight: 800;
-}
-
-.btn-blue:hover {
-  background: #e1f0ff;
-  color: #004fb3;
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid #e2e8f0;
-  color: var(--text-main);
-}
-
-.btn-outline:hover {
-  border-color: var(--text-main);
-  background: transparent;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Navbar Scoped */
+/* =========================
+   NAVBAR
+========================= */
 .navbar-float {
-  position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--nav-height);
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #eee;
   z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
 }
 
-.nav-links {
-  display: flex;
-  gap: 40px;
+/* =========================
+   DARK SECTIONS (FOOTER)
+========================= */
+.dark-section {
+  background: #000;
+  color: var(--text-invert);
 }
 
-.nav-link {
-  font-weight: 600;
-  color: var(--text-dim);
-  transition: color 0.2s;
+.dark-section .text-body,
+.dark-section .text-small {
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.nav-link:hover {
-  color: var(--primary);
-}
-
-/* Footer overrides */
-footer {
-  border-top: 1px solid #eee !important;
-  background: var(--surface-secondary) !important;
-}
-
-/* Responsive */
-/* Responsive */
-.mobile-only {
-  display: none !important;
-}
-
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 968px) {
   .grid-2 {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .desktop-only {
-    display: none !important;
-  }
-
-  .mobile-only {
-    display: flex !important;
-  }
-
-  .navbar-float {
-    padding: 0 20px;
-  }
-
   .container {
     padding: 0 20px;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 2.2rem;
   }
 
   .section {
     padding: 60px 0;
   }
-
-  .glass-card {
-    padding: 30px;
-  }
-
-  /* Fix Phone Mockup on Mobile */
-  .phone-mockup {
-    width: 100% !important;
-    max-width: 320px;
-    /* Limit size on mobile */
-    height: auto !important;
-    aspect-ratio: 9/19;
-  }
-
-  /* Fix order reversal consistency on mobile */
-  /* We want Text first, then Image always on mobile */
-  .grid-2>div {
-    order: unset !important;
-  }
-}
-
-.countdown {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin: 24px 0;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-.countdown strong {
-  font-size: 1.1rem;
-  color: var(--primary);
 }
