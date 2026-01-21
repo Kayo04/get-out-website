@@ -220,21 +220,21 @@ export const en = {
             features: ["Create 1 event per week", "Access to all app features", "Public event discovery", "Basic profile"]
         },
         plan_pro: {
-            name: "Pro",
+            name: "Basic",
             price: "€4.99",
             period: "/month",
             features: ["Create unlimited events", "Organizer Dashboard access", "Advanced analytics", "Priority support"]
         },
         plan_pro_max: {
-            name: "Pro Max",
+            name: "Pro",
             price: "€9.99",
             period: "/month",
-            features: ["Everything in Pro", "Featured Events", "SMS Notifications", "Ticket Scanning App Pro", "Lowest Fees"]
+            features: ["Everything in Basic", "Featured Events", "SMS Notifications", "Ticket Scanning App Pro", "Lowest Fees"]
         },
         plan_company: {
             name: "Company",
-            price: "Custom",
-            period: "",
+            price: "€29.99",
+            period: "/month",
             features: ["Dedicated support", "Custom integration", "Bulk pricing deals", "White-label options"],
             cta: "Contact Us"
         }

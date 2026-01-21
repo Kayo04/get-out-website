@@ -220,21 +220,21 @@ export const pt = {
             features: ["Cria 1 evento por semana", "Acesso a todas as funcionalidades", "Descoberta de eventos", "Perfil básico"]
         },
         plan_pro: {
-            name: "Pro",
+            name: "Básico",
             price: "€4.99",
             period: "/mês",
             features: ["Cria eventos ilimitados", "Acesso ao Dashboard de Eventos", "Análises avançadas", "Suporte prioritário"]
         },
         plan_pro_max: {
-            name: "Pro Max",
+            name: "Pro",
             price: "€9.99",
             period: "/mês",
-            features: ["Tudo no Pro", "Eventos em Destaque", "Notificações SMS", "Scanner Pro App", "Taxas mais baixas"]
+            features: ["Tudo no Básico", "Eventos em Destaque", "Notificações SMS", "Scanner Pro App", "Taxas mais baixas"]
         },
         plan_company: {
             name: "Empresa",
-            price: "Personalizado",
-            period: "",
+            price: "€29.99",
+            period: "/mês",
             features: ["Suporte dedicado", "Integração personalizada", "Ofertas para grandes volumes", "Opções White-label"],
             cta: "Contacta-nos"
         }
