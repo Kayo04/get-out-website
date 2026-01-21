@@ -2,10 +2,10 @@ export const en = {
     navbar: {
         home: "Home",
         about: "About",
-        download: "Download",
         features: "Features",
         contact: "Contact",
-        faq: "FAQ",
+        pricing: "Pricing",
+        download: "Download",
         mode_dark: "Dark Mode",
         mode_light: "Light Mode"
     },
@@ -208,6 +208,30 @@ export const en = {
         title_start: "Download GetOut",
         title_end: "Social and Connect Today",
         desc: "Download GetOut now to start connecting with like-minded people and enjoy a seamless social experience!"
+    },
+    pricing_page: {
+        title: "Simple, Transparent Pricing",
+        subtitle: "Choose the plan that's right for you.",
+        best_option: "Best Option",
+        plan_free: {
+            name: "Free",
+            price: "€0",
+            period: "/month",
+            features: ["Create 1 event per week", "Access to all app features", "Public event discovery", "Basic profile"]
+        },
+        plan_pro: {
+            name: "Pro",
+            price: "€4.99",
+            period: "/month",
+            features: ["Create unlimited events", "Organizer Dashboard access", "Advanced analytics", "Priority support"]
+        },
+        plan_company: {
+            name: "Company",
+            price: "Custom",
+            period: "",
+            features: ["Dedicated support", "Custom integration", "Bulk pricing deals", "White-label options"],
+            cta: "Contact Us"
+        }
     }
 };
 

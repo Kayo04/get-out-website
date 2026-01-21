@@ -5,7 +5,7 @@ import { OrbitControls, Environment, Float} from "@react-three/drei";
 import { Suspense } from "react";
 import PhoneModel from "./PhoneModel";
 
-export default function PhoneScene() {
+export default function PhoneScene({ image }: { image?: string }) {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <Canvas camera={{ position: [0, 0, 9], fov: 45 }}>
@@ -15,7 +15,7 @@ export default function PhoneScene() {
         
         <Suspense fallback={null}>
           <Float speed={2.5} rotationIntensity={0.5} floatIntensity={1.5} floatingRange={[-0.2, 0.2]}>
-            <PhoneModel />
+            <PhoneModel image={image} />
           </Float>
           <Environment preset="city" />
         </Suspense>

@@ -45,15 +45,21 @@ export default function Navbar() {
             fontWeight: 800, 
             fontSize: '1.8rem', // Aumentado de 1.4rem para 1.8rem
             letterSpacing: '-0.05em', 
-            color: 'var(--text-main)' 
+            color: '#0070f3' // Changed to Blue
           }}>
             GET<span style={{ color: '#FF6B00' }}>OUT</span>
           </span>
       </Link>
       
       {/* 2. LINKS CENTRALIZADOS AUMENTADOS */}
-      <div className="desktop-only" style={{ display: 'flex', gap: '35px' }}> {/* Gap aumentado para 35px */}
-        {['home', 'faq', 'download', 'contact'].map((key) => (
+      <div className="desktop-only" style={{ 
+          display: 'flex', 
+          gap: '35px',
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)'
+      }}> {/* Gap aumentado para 35px */}
+        {['home', 'pricing', 'contact'].map((key) => (
           <Link 
             key={key} 
             href={key === 'home' ? '/' : `/${key}`} 
@@ -115,8 +121,8 @@ export default function Navbar() {
             ...linkStyle,
             backgroundColor: 'var(--text-main)',
             color: 'var(--surface)', 
-            padding: '12px 26px', // Botão aumentado
-            fontSize: '0.95rem',  // Fonte aumentada
+            padding: '12px 26px',
+            fontSize: '0.95rem',
             fontWeight: '700',
             borderRadius: '25px'
           }}
@@ -171,20 +177,9 @@ export default function Navbar() {
             </button>
           )}
 
-          <Link href="/" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.home}</Link>
-          <Link href="/faq" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.faq}</Link>
-          <Link href="/download" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.download}</Link>
+           <Link href="/" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.home}</Link>
+          <Link href="/pricing" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.pricing}</Link>
           <Link href="/contact" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.contact}</Link>
-          
-          <div style={{ width: '60px', height: '2px', background: 'var(--surface-tertiary)', margin: '15px 0' }} />
-          
-          <Link 
-            href="/download" 
-            style={{ ...linkStyle, backgroundColor: '#FF6B00', color: '#fff', padding: '16px 45px', borderRadius: '35px', fontWeight: '800', fontSize: '1.2rem' }}
-            onClick={() => setIsOpen(false)}
-          >
-            {t.navbar.download}
-          </Link>
       </div>
     </nav>
   );
