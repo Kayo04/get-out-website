@@ -278,3 +278,28 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.text-shine {
+  background: linear-gradient(
+    to right, 
+    #4d4d4d 0%, 
+    #4d4d4d 35%, 
+    #ffffff 50%, 
+    #4d4d4d 65%, 
+    #4d4d4d 100%
+  );
+  background-size: 250% 100%; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s infinite linear;
+  will-change: background-position;
+  display: inline-block;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 150% 0%;
+  }
+  100% {
+    background-position: -50% 0%;
+  }
+}
