@@ -10,7 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import Feature from "@/components/Features";
 import LaunchCountdown from "@/components/Countdown";
 import AppDownloadSection from "@/components/AppDownload";
-import ScrollSection from "@/components/ScrollSelection";
+import ScrollSelection from "@/components/ScrollSelection";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -154,7 +154,7 @@ export default function Home() {
         <LaunchCountdown />
         <Feature/>
         <AppShowcase />
-        <ScrollSection/>
+        <ScrollSelection/>
         <Testimonials />
         <AppDownloadSection />
       </main>
