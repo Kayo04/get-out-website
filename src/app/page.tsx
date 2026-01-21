@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import PhoneScene from "@/components/PhoneScene";
 import Testimonials from "@/components/Testimonials";
-import AppShowcase from "@/components/AppShowcase";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import Feature from "@/components/Features";
@@ -25,7 +24,6 @@ export default function Home() {
           paddingTop: '80px',
           position: 'relative',
           overflow: 'hidden',
-          // Use a variable or conditional gradient if needed, but for now lets keep it subtle or adjust opacity
         }}>
           
           <div className="container grid-2" style={{ alignItems: 'center' }}>
@@ -150,7 +148,6 @@ export default function Home() {
 
           </div>
         </section>
-
         <LaunchCountdown />
         <Feature/>
         <ScrollSelection/>
