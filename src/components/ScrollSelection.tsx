@@ -101,7 +101,7 @@ export default function ScrollSelection() {
   return (
     <section 
       ref={container} 
-      className="bg-white dark:bg-[#0f1115] transition-colors duration-700 overflow-hidden min-h-screen flex items-center justify-center"
+      className="bg-[var(--surface)] transition-colors duration-700 overflow-hidden min-h-screen flex items-center justify-center"
     >
       <div className="w-full max-w-[1600px] flex flex-row items-center justify-between px-10 gap-20">
         
@@ -147,11 +147,11 @@ export default function ScrollSelection() {
                 {step.step}
               </span>
 
-              <h2 className="text-[130px] font-[1000] leading-[1.1] mb-20 tracking-normal uppercase italic text-black dark:text-white transition-colors">
+              <h2 className="text-[130px] font-[1000] leading-[1.1] mb-20 tracking-normal uppercase italic text-[var(--text-main)] transition-colors">
                 {step.title}
               </h2>
 
-              <p className={`text-[20px] font-bold max-w-2xl leading-[1.4] pl-10 text-gray-700 dark:text-gray-400 transition-colors`}>
+              <p className={`text-[20px] font-bold max-w-2xl leading-[1.4] pl-10 text-[var(--text-dim)] transition-colors`}>
                 {step.desc}
               </p>
             </div>
