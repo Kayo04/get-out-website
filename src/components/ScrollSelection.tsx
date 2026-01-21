@@ -103,11 +103,11 @@ export default function ScrollSelection() {
       ref={container} 
       className="bg-[var(--surface)] transition-colors duration-700 overflow-hidden min-h-screen flex items-center justify-center"
     >
-      <div className="w-full max-w-[1600px] flex flex-row items-center justify-between px-10 gap-20">
+      <div className="w-full max-w-[1600px] flex flex-row portrait:flex-col items-center justify-between px-10 portrait:px-4 gap-20 portrait:gap-10">
         
-        {/* LADO ESQUERDA */}
-        <div className="w-1/2 relative flex justify-start items-center">
-          <div className="relative w-[600px] -ml-32"> 
+        {/* LADO ESQUERDA (IMAGEM) */}
+        <div className="w-1/2 portrait:w-full relative flex justify-start portrait:justify-center items-center portrait:mt-10 portrait:mb-10">
+          <div className="relative w-[600px] portrait:w-[300px] -ml-32 portrait:ml-0"> 
             <img 
               src="/assets/maofixe.png" 
               alt="Mão" 
@@ -133,25 +133,25 @@ export default function ScrollSelection() {
           </div>
         </div>
 
-        {/* LADO DIREITO */}
-        <div className="w-1/2 relative h-[900px] flex flex-col justify-center">
+        {/* LADO DIREITO (TEXTO) */}
+        <div className="w-1/2 portrait:w-full relative h-[900px] portrait:h-[500px] flex flex-col justify-center text-left portrait:text-center portrait:items-center">
           {STEPS.map((step, i) => (
             <div 
               key={i} 
-              className={`text-step-${i} absolute inset-0 flex flex-col justify-center opacity-0`}
+              className={`text-step-${i} absolute inset-0 flex flex-col justify-center portrait:justify-start opacity-0 portrait:pt-10`}
               style={{ visibility: 'hidden' }}
             >
               <span 
-                className={`text-[50px] font-[1000] uppercase tracking-wider leading-none mb-10 bg-gradient-to-r ${step.gradient} bg-clip-text text-transparent inline-block`}
+                className={`text-[50px] portrait:text-[30px] font-[1000] uppercase tracking-wider leading-none mb-10 portrait:mb-4 bg-gradient-to-r ${step.gradient} bg-clip-text text-transparent inline-block`}
               >
                 {step.step}
               </span>
 
-              <h2 className="text-[130px] font-[1000] leading-[1.1] mb-20 tracking-normal uppercase italic text-[var(--text-main)] transition-colors">
+              <h2 className="text-[120px] portrait:text-[50px] font-[1000] leading-[1.1] mb-20 portrait:mb-6 tracking-normal uppercase italic text-[var(--text-main)] transition-colors">
                 {step.title}
               </h2>
 
-              <p className={`text-[20px] font-bold max-w-2xl leading-[1.4] pl-10 text-[var(--text-dim)] transition-colors`}>
+              <p className={`text-[20px] portrait:text-[16px] font-bold max-w-2xl leading-[1.4] pl-10 portrait:pl-0 text-[var(--text-dim)] transition-colors`}>
                 {step.desc}
               </p>
             </div>
