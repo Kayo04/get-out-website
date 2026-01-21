@@ -225,6 +225,12 @@ export const en = {
             period: "/month",
             features: ["Create unlimited events", "Organizer Dashboard access", "Advanced analytics", "Priority support"]
         },
+        plan_pro_max: {
+            name: "Pro Max",
+            price: "€9.99",
+            period: "/month",
+            features: ["Everything in Pro", "Featured Events", "SMS Notifications", "Ticket Scanning App Pro", "Lowest Fees"]
+        },
         plan_company: {
             name: "Company",
             price: "Custom",

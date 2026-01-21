@@ -225,6 +225,12 @@ export const pt = {
             period: "/mês",
             features: ["Cria eventos ilimitados", "Acesso ao Dashboard de Eventos", "Análises avançadas", "Suporte prioritário"]
         },
+        plan_pro_max: {
+            name: "Pro Max",
+            price: "€9.99",
+            period: "/mês",
+            features: ["Tudo no Pro", "Eventos em Destaque", "Notificações SMS", "Scanner Pro App", "Taxas mais baixas"]
+        },
         plan_company: {
             name: "Empresa",
             price: "Personalizado",

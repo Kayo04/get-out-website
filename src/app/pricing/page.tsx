@@ -20,7 +20,15 @@ export default function PricingPage() {
       price: t.pricing_page?.plan_pro.price,
       period: t.pricing_page?.plan_pro.period,
       features: t.pricing_page?.plan_pro.features,
-      highlight: true
+      highlight: true // Pro is highlighted again
+    },
+    {
+      id: "pro_max",
+      name: t.pricing_page?.plan_pro_max?.name || "Pro Max",
+      price: t.pricing_page?.plan_pro_max?.price || "€9.99",
+      period: t.pricing_page?.plan_pro_max?.period || "/month",
+      features: t.pricing_page?.plan_pro_max?.features || [],
+      highlight: false // Pro Max is no longer highlighted
     },
     {
       id: "company",
@@ -50,7 +58,7 @@ export default function PricingPage() {
 
   return (
     <main style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '80px' }}>
-      <div className="container">
+      <div className="container" style={{ maxWidth: '1400px' }}> {/* Increased container width for 4 columns */}
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -65,10 +73,10 @@ export default function PricingPage() {
         {/* Pricing Cards */}
         <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-            gap: '30px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', // Reduced min-width to fit 4 items
+            gap: '20px', // Reduced gap slightly
             marginBottom: '100px',
-            maxWidth: '1200px',
+            maxWidth: '1400px',
             marginLeft: 'auto',
             marginRight: 'auto'
         }}>
