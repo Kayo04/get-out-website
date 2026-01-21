@@ -41,7 +41,7 @@
 /* DARK MODE OVERRIDES */
 html.dark {
   /* Surfaces */
-  --surface: #0f1115;
+  --surface: #000000;
   --surface-secondary: #1a1f2c;
   --surface-tertiary: #2e3440;
 
@@ -265,4 +265,15 @@ body {
   .section {
     padding: 60px 0;
   }
+}
+
+/* Utilities */
+.hover-lift {
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
