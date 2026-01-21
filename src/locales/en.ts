@@ -237,7 +237,12 @@ export const en = {
             period: "/month",
             features: ["Dedicated support", "Custom integration", "Bulk pricing deals", "White-label options"],
             cta: "Contact Us"
-        }
+        },
+        toggle_monthly: "Monthly",
+        toggle_yearly: "Yearly",
+        months_free: "MONTHS FREE",
+        month_free: "MONTH FREE",
+        get_app: "Get the App"
     }
 };
 

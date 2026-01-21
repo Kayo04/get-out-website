@@ -237,6 +237,11 @@ export const pt = {
             period: "/mês",
             features: ["Suporte dedicado", "Integração personalizada", "Ofertas para grandes volumes", "Opções White-label"],
             cta: "Contacta-nos"
-        }
+        },
+        toggle_monthly: "Mensal",
+        toggle_yearly: "Anual",
+        months_free: "MESES GRÁTIS",
+        month_free: "MÊS GRÁTIS",
+        get_app: "Obter a App"
     }
 };
