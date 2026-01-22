@@ -11,10 +11,35 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else {
+        if (currentScrollY > lastScrollY) {
+          // Scrolling down
+          setIsVisible(false);
+        } else {
+          // Scrolling up
+          setIsVisible(true);
+        }
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+    };
+  }, [lastScrollY]);
 
   const linkStyle: React.CSSProperties = {
     textDecoration: 'none',
@@ -36,7 +61,9 @@ export default function Navbar() {
       width: '100%',
       zIndex: 1000,
       boxShadow: 'var(--card-shadow)',
-      borderBottom: '1px solid var(--surface-tertiary)'
+      borderBottom: '1px solid var(--surface-tertiary)',
+      transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
+      transition: 'transform 0.3s ease-in-out'
     }}>
       
       {/* 1. LOGO AUMENTADO */}

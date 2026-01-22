@@ -1,53 +1,68 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "@/context/ThemeContext";
+import { Zap, Ticket, ScanLine, Globe, ShieldCheck, Users } from "lucide-react";
 
 export default function FeaturesPage() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   
+  const isDark = theme === "dark";
+
   const features = [
     {
       title: t.features_page.list[0].title,
       desc: t.features_page.list[0].desc,
-      icon: "⚡"
+      icon: <Zap size={32} color={isDark ? "#D4AF37" : "#FF5500"} />
     },
     {
       title: t.features_page.list[1].title,
       desc: t.features_page.list[1].desc,
-      icon: "🗺️"
+      icon: <Ticket size={32} color={isDark ? "#D4AF37" : "#FF5500"} />
     },
     {
       title: t.features_page.list[2].title,
       desc: t.features_page.list[2].desc,
-      icon: "💎"
+      icon: <ScanLine size={32} color={isDark ? "#D4AF37" : "#FF5500"} />
     },
     {
       title: t.features_page.list[3].title,
       desc: t.features_page.list[3].desc,
-      icon: "🤝"
+      icon: <Globe size={32} color={isDark ? "#D4AF37" : "#FF5500"} />
     },
     {
       title: t.features_page.list[4].title,
       desc: t.features_page.list[4].desc,
-      icon: "🤖"
+      icon: <ShieldCheck size={32} color={isDark ? "#D4AF37" : "#FF5500"} />
     },
     {
       title: t.features_page.list[5].title,
       desc: t.features_page.list[5].desc,
-      icon: "🎟️"
+      icon: <Users size={32} color={isDark ? "#D4AF37" : "#FF5500"} />
     }
   ];
 
   return (
     <>
-      <main style={{ paddingTop: "100px", minHeight: "100vh" }}>
+      <main style={{ 
+          backgroundColor: isDark ? "#000" : "var(--surface)", 
+          minHeight: "100vh", 
+          paddingBottom: "100px",
+          transition: "background-color 0.3s ease"
+      }}>
         
         {/* Header */}
-        <section className="container" style={{ textAlign: "center", marginBottom: "4rem" }}>
-          <h1 className="text-gradient" style={{ fontSize: "3.5rem", marginBottom: "1rem" }}>{t.features_page.hero_title}</h1>
-          <p style={{ maxWidth: "600px", margin: "0 auto", color: "var(--text-dim)", fontSize: "1.2rem" }}>
-            {t.features_page.hero_subtitle}
-          </p>
+        <section className="container" style={{ textAlign: "center", paddingTop: "140px", marginBottom: "80px" }}>
+          <h1 style={{ 
+              fontSize: "3.5rem", 
+              fontWeight: "700", 
+              marginBottom: "10px",
+              color: isDark ? "white" : "var(--text-main)",
+              transition: "color 0.3s ease"
+          }}>
+            {t.features_page.hero_title}
+          </h1>
         </section>
 
         {/* Grid */}
@@ -59,24 +74,53 @@ export default function FeaturesPage() {
             marginBottom: "80px"
           }}>
             {features.map((f, i) => (
-              <div key={i} className="glass-card" style={{ transition: "transform 0.2s" }}>
-                <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>{f.icon}</div>
-                <h3 style={{ color: "var(--secondary)", marginBottom: "0.5rem" }}>{f.title}</h3>
-                <p style={{ color: "var(--text-dim)" }}>{f.desc}</p>
+              <div key={i} style={{
+                backgroundColor: isDark ? "#0a0a0a" : "var(--surface)",
+                borderRadius: "20px",
+                padding: "40px",
+                border: isDark ? "1px solid #222" : "1px solid var(--border-color)",
+                display: "flex", 
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+                transition: "all 0.3s ease",
+                height: "100%", 
+                gap: "20px",
+                boxShadow: isDark ? "none" : "var(--card-shadow)"
+              }}>
+                <div style={{
+                    width: "70px",
+                    height: "70px",
+                    borderRadius: "50%",
+                    backgroundColor: isDark ? "rgba(212, 175, 55, 0.1)" : "rgba(255, 85, 0, 0.1)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "10px"
+                }}>
+                    {f.icon}
+                </div>
+                <h3 style={{ 
+                    color: isDark ? "white" : "var(--text-main)", 
+                    fontSize: "1.5rem", 
+                    fontWeight: "600",
+                    marginBottom: "10px",
+                    marginTop: 0,
+                    transition: "color 0.3s ease" 
+                }}>
+                    {f.title}
+                </h3>
+                <p style={{ 
+                    color: isDark ? "#888" : "var(--text-dim)", 
+                    lineHeight: "1.6",
+                    fontSize: "1rem",
+                    margin: 0,
+                    transition: "color 0.3s ease"
+                }}>
+                    {f.desc}
+                </p>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Hero Bottom */}
-        <section style={{ 
-          background: "linear-gradient(to bottom, transparent, var(--background-light))", 
-          padding: "80px 0",
-          textAlign: "center" 
-        }}>
-          <div className="container">
-            <h2 style={{ marginBottom: "2rem" }}>{t.features_page.ready_title}</h2>
-            <a href="/download" className="btn btn-primary">{t.features_page.get_app_btn}</a>
           </div>
         </section>
 
@@ -84,3 +128,5 @@ export default function FeaturesPage() {
     </>
   );
 }
+
+

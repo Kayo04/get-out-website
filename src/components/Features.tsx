@@ -1,84 +1,129 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-
+import { CalendarRange, Ticket, UserCheck } from "lucide-react";
 
 export default function Feature() {
     const { t } = useLanguage();
 
     return (
-        <section className="section">
-            <div className="container">
+        <section style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+            <div className="container" style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
+                {/* Header Section */}
                 <div style={{ textAlign: "center", marginBottom: "80px" }}>
-                    <h2>{t.features.title}</h2>
-                    <p style={{ margin: "0 auto" }}>{t.features.subtitle}</p>
+                    <h2 style={{ 
+                        fontSize: "3rem", 
+                        fontWeight: "700", 
+                        marginBottom: "16px",
+                        color: "white",
+                        fontFamily: "system-ui, -apple-system, sans-serif"
+                    }}>
+                        {t.features.title}
+                    </h2>
+                    <p style={{ 
+                        fontSize: "1.25rem", 
+                        color: "#888", 
+                        maxWidth: "600px",
+                        margin: "0 auto",
+                        lineHeight: "1.6",
+                        fontFamily: "system-ui, -apple-system, sans-serif"
+                    }}>
+                        {t.features.subtitle}
+                    </p>
                 </div>
 
-                <div className="grid-2" style={{ alignItems: "stretch" }}>
-                    {/* Mascot Feature Card */}
-                    <div
-                        className="glass-card"
-                        style={{
-                            padding: 0,
-                            overflow: "hidden",
-                            minHeight: "400px",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            position: "relative",
-                        }}
-                    >
-                        <Image
-                            src="/mascote-com-luz.jpg"
-                            alt="Mascot"
-                            width={600}
-                            height={600}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                                opacity: 0.9,
-                            }}
-                        />
-                        {/* Gradient + texto */}
-                        <div
-                            style={{
-                                position: "absolute",
-                                bottom: 0,
-                                left: 0,
-                                width: "100%",
-                                padding: "30px",
-                                background: "linear-gradient(to top, black, transparent)",
-                            }}
-                        >
-                            <h3 style={{ color: "white" }}>
-                                {t.features.mascot_title}
-                            </h3>
-                            <p style={{ margin: 0, fontSize: "0.9rem", color: "white" }}>
-                                {t.features.mascot_desc}
-                            </p>
-                        </div>
-                    </div>
+                {/* Grid Section */}
+                <div 
+                    style={{ 
+                        display: "grid", 
+                        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", 
+                        gap: "24px" 
+                    }}
+                >
+                    {/* Feature 1 */}
+                    <FeatureCard 
+                        icon={<CalendarRange size={28} color="#FF5500" />}
+                        title={t.features.mascot_title}
+                        description={t.features.mascot_desc}
+                    />
 
-                    {/* Feature Grid */}
-                    <div style={{ display: "grid", gap: "30px" }}>
-                        <div className="glass-card">
-                            <h3 style={{ color: "var(--secondary)" }}>
-                                {t.features.heatmaps_title}
-                            </h3>
-                            <p>{t.features.heatmaps_desc}</p>
-                        </div>
+                    {/* Feature 2 */}
+                    <FeatureCard 
+                        icon={<Ticket size={28} color="#FF5500" />}
+                        title={t.features.heatmaps_title}
+                        description={t.features.heatmaps_desc}
+                    />
 
-                        <div className="glass-card">
-                            <h3 style={{ color: "var(--primary)" }}>
-                                {t.features.perks_title}
-                            </h3>
-                            <p>{t.features.perks_desc}</p>
-                        </div>
-                    </div>
+                    {/* Feature 3 */}
+                    <FeatureCard 
+                        icon={<UserCheck size={28} color="#FF5500" />}
+                        title={t.features.perks_title}
+                        description={t.features.perks_desc}
+                    />
                 </div>
             </div>
         </section>
+    );
+}
+
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
+    return (
+        <div style={{
+            backgroundColor: "#0C0C0C", // Matches the dark card bg in image
+            borderRadius: "12px",       // Slightly tighter radius as seen in image
+            padding: "48px 32px",       // Generous padding
+            border: "1px solid #1F1F1F", // Very subtle dark border
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            transition: "all 0.3s ease",
+            height: "100%"
+        }}
+        onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-5px)";
+            e.currentTarget.style.borderColor = "#333";
+        }}
+        onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.borderColor = "#1F1F1F";
+        }}
+        >
+            {/* Icon Container */}
+            <div style={{
+                width: "60px",
+                height: "60px",
+                borderRadius: "50%",
+                backgroundColor: "#161616", // Darker circle background
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: "24px",
+                border: "1px solid #222"
+            }}>
+                {icon}
+            </div>
+
+            {/* Title */}
+            <h3 style={{ 
+                color: "white", 
+                fontSize: "1.25rem", 
+                fontWeight: "600",
+                marginBottom: "16px",
+                fontFamily: "system-ui, -apple-system, sans-serif"
+            }}>
+                {title}
+            </h3>
+
+            {/* Description */}
+            <p style={{ 
+                color: "#9CA3AF", // Muted grey text
+                lineHeight: "1.6",
+                fontSize: "0.95rem",
+                fontFamily: "system-ui, -apple-system, sans-serif"
+            }}>
+                {description}
+            </p>
+        </div>
     );
 }

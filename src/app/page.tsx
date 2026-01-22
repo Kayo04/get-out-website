@@ -149,7 +149,6 @@ export default function Home() {
           </div>
         </section>
         <LaunchCountdown />
-        <Feature/>
         <ScrollSelection/>
         <Testimonials />
         <AppDownloadSection />
