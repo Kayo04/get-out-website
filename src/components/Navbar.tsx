@@ -34,6 +34,7 @@ export default function Navbar() {
       setLastScrollY(currentScrollY);
     };
 
+    
     window.addEventListener('scroll', controlNavbar);
 
     return () => {
