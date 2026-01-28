@@ -25,7 +25,7 @@ export const pt = {
     },
     features_page: {
         hero_title: "Tudo o Que Precisas",
-        hero_subtitle: "O toolkit definitivo para o explorador da vida noturna moderna.",
+        hero_subtitle: "Tudo o que a nossa aplicação faz e mais!!",
         ready_title: "Pronto para melhorar a tua noite?",
         get_app_btn: "Obter a App",
         list: [
@@ -76,7 +76,7 @@ export const pt = {
             "Para comunicar contigo sobre atualizações ou ofertas."
         ],
         contact_title: "4. Contacta-nos",
-        contact_text: "Se tiveres alguma dúvida sobre esta política de privacidade ou sobre as nossas práticas de privacidade, por favor contacta-nos em privacy@getoutapp.com."
+        contact_text: "Se tiveres alguma dúvida sobre esta política de privacidade ou sobre as nossas práticas de privacidade, por favor contacta-nos em getoutappmobile@gmail.com."
     },
     hero: {
         subtitle: "PLATAFORMA DE GESTÃO SOCIAL",

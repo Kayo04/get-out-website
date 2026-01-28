@@ -25,7 +25,7 @@ export const en = {
     },
     features_page: {
         hero_title: "Everything You Need",
-        hero_subtitle: "The ultimate toolkit for the modern nightlife explorer.",
+        hero_subtitle: "Everything our application does and more!!",
         ready_title: "Ready to upgrade your night?",
         get_app_btn: "Get the App",
         list: [
@@ -76,7 +76,7 @@ export const en = {
             "To communicate with you about updates or offers."
         ],
         contact_title: "4. Contact Us",
-        contact_text: "If you have any questions about this privacy policy or our privacy practices, please contact us at privacy@getoutapp.com."
+        contact_text: "If you have any questions about this privacy policy or our privacy practices, please contact us at getoutappmobile@gmail.com."
     },
     hero: {
         subtitle: "SOCIAL MANAGEMENT PLATFORM",

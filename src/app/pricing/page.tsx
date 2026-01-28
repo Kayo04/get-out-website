@@ -13,32 +13,28 @@ export default function PricingPage() {
   const pricingConfig = {
     basic: { 
       monthly: 4.99, 
-      freeMonthsAnnually: 1 // 1 mês grátis
+      annually: 55.00,
+      freeMonthsAnnually: 1 // ~1 mês grátis
     },
     pro: { 
-      monthly: 9.99, 
-      freeMonthsAnnually: 2 // 2 meses grátis
+      monthly: 14.99, 
+      annually: 149.99,
+      freeMonthsAnnually: 2 // ~2 meses grátis
     },
-    company: { 
+    enterprise: { 
       monthly: 29.99, 
-      freeMonthsAnnually: 3 // 3 meses grátis
+      annually: 299.99,
+      freeMonthsAnnually: 2 // ~2 meses grátis
     }
   };
 
-  // Função interna para calcular o preço final com arredondamento estético
+  // Função interna para calcular o preço final
   const getPrice = (planId: keyof typeof pricingConfig | 'free') => {
     if (planId === 'free') return "0";
     
+    // Agora usamos os preços explícitos
     const plan = pricingConfig[planId];
-    if (billing === 'annually') {
-      // Cálculo base: Preço Mensal * (12 - Meses Grátis)
-      const rawPrice = plan.monthly * (12 - plan.freeMonthsAnnually);
-      
-      // ARREDONDAMENTO ESTÉTICO: 
-      // Pegamos o número inteiro e forçamos o final .99
-      return (Math.floor(rawPrice) + 0.99).toFixed(2);
-    }
-    return plan.monthly.toFixed(2);
+    return plan[billing].toFixed(2);
   };
 
   const periodLabel = billing === 'annually' ? "PER YEAR" : "PER MONTH";
@@ -72,14 +68,14 @@ export default function PricingPage() {
       freeMonths: pricingConfig.pro.freeMonthsAnnually
     },
     {
-      id: "company",
+      id: "enterprise",
       name: t.pricing_page?.plan_company.name || "Company",
-      price: getPrice('company'),
+      price: getPrice('enterprise'),
       period: t.pricing_page?.plan_company.period,
       features: t.pricing_page?.plan_company.features,
       highlight: false,
       cta: t.pricing_page?.plan_company.cta,
-      freeMonths: pricingConfig.company.freeMonthsAnnually
+      freeMonths: pricingConfig.enterprise.freeMonthsAnnually
     }
   ];
 
@@ -253,7 +249,7 @@ export default function PricingPage() {
                         cursor: 'pointer',
                         transition: 'all 0.2s ease'
                     }}>
-                        {plan.id === 'company' ? (t.pricing_page?.plan_company.cta || "Contact Us") : (t.pricing_page?.get_app || "Get the App")}
+                        {plan.id === 'enterprise' ? (t.pricing_page?.plan_company.cta || "Contact Us") : (t.pricing_page?.get_app || "Get the App")}
                     </button>
                 </div>
             ))}

@@ -5,17 +5,40 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function ContactPage() {
   const { t } = useLanguage();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    alert(t.contact_page.success_msg);
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert(t.contact_page.success_msg);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Failed to send message: " + (data.error || "Unknown error"));
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again later.");
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -83,14 +106,19 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary" style={{ width: "100%", marginTop: "1rem" }}>
-                  {t.contact_page.submit_btn}
+                <button 
+                  type="submit" 
+                  className="btn btn-primary" 
+                  style={{ width: "100%", marginTop: "1rem", opacity: loading ? 0.7 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : t.contact_page.submit_btn}
                 </button>
               </form>
             </div>
 
             <div style={{ marginTop: "3rem", textAlign: "center", color: "var(--text-dim)" }}>
-              <p>{t.contact_page.alt_contact} <a href="mailto:support@getoutapp.com" style={{ color: "var(--primary)" }}>support@getoutapp.com</a></p>
+              <p>{t.contact_page.alt_contact} <a href="mailto:getoutappmobile@gmail.com" style={{ color: "var(--primary)" }}>getoutappmobile@gmail.com</a></p>
             </div>
           </div>
         </div>
