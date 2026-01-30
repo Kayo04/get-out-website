@@ -63,7 +63,7 @@ export default function Testimonials() {
   }, [reviews.length]);
 
   return (
-    <section className="section">
+    <section id="testimonials" className="section">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <h2>{t.testimonials ? t.testimonials.title : "What Users Say"}</h2>

@@ -78,12 +78,21 @@ export default function Footer() {
 
         {/* LINKS DE NAVEGAÇÃO */}
         <nav style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '25px', marginBottom: '40px' }}>
-          {['benefits', 'features', 'pricing', 'testimonials', 'faq', 'waitlist'].map((item) => (
-            <Link key={item} href={`#${item}`} style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
-               {/* @ts-ignore */}
-               {t.footer.links[item] || item}
-            </Link>
-          ))}
+          <Link href="/features" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.footer.links.features}
+          </Link>
+          <Link href="/pricing" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.footer.links.pricing}
+          </Link>
+          <Link href="/#testimonials" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.footer.links.testimonials}
+          </Link>
+          <Link href="/privacy" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.footer.links.privacy}
+          </Link>
+          <Link href="/terms" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.footer.links.terms}
+          </Link>
         </nav>
 
         <p style={{ color: isDarkMode ? '#444' : '#999', fontSize: '11px' }}>

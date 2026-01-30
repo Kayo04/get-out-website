@@ -37,7 +37,7 @@ export default function PricingPage() {
     return plan[billing].toFixed(2);
   };
 
-  const periodLabel = billing === 'annually' ? "PER YEAR" : "PER MONTH";
+  const periodLabel = billing === 'annually' ? t.pricing_page.period_year : t.pricing_page.period_month;
 
   const plans = [
     {

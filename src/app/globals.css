@@ -42,8 +42,8 @@
 html.dark {
   /* Surfaces */
   --surface: #000000;
-  --surface-secondary: #1a1f2c;
-  --surface-tertiary: #2e3440;
+  --surface-secondary: #0a0a0a;
+  --surface-tertiary: #141414;
 
   /* Text */
   --text-main: #ffffff;
@@ -51,14 +51,14 @@ html.dark {
   --text-invert: #000000;
 
   /* UI */
-  --border-color: #2e3440;
+  --border-color: #1a1a1a;
 
   /* Shadows - lighter for dark mode visibility or just different */
   --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   --card-shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
 
   /* UI overrides for dark mode specific elements if needed */
-  background-color: var(--surface);
+  background-color: #000000;
   color: var(--text-main);
 }
 
@@ -92,11 +92,15 @@ body {
   font-family: var(--font-body);
   color: var(--text-main);
   background-color: var(--surface);
-  background-color: var(--surface);
-
   background-image:
     radial-gradient(circle at 0% 0%, rgba(255, 107, 0, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 100% 100%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
+}
+
+/* Remove gradients in dark mode for pure black */
+html.dark body {
+  background-image: none;
+  background-color: #000000;
 }
 
 *,
@@ -279,15 +283,13 @@ body {
 }
 
 .text-shine {
-  background: linear-gradient(
-    to right, 
-    #4d4d4d 0%, 
-    #4d4d4d 35%, 
-    #ffffff 50%, 
-    #4d4d4d 65%, 
-    #4d4d4d 100%
-  );
-  background-size: 250% 100%; 
+  background: linear-gradient(to right,
+      #4d4d4d 0%,
+      #4d4d4d 35%,
+      #ffffff 50%,
+      #4d4d4d 65%,
+      #4d4d4d 100%);
+  background-size: 250% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 6s infinite linear;
@@ -299,6 +301,7 @@ body {
   0% {
     background-position: 150% 0%;
   }
+
   100% {
     background-position: -50% 0%;
   }

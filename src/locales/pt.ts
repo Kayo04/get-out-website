@@ -78,6 +78,33 @@ export const pt = {
         contact_title: "4. Contacta-nos",
         contact_text: "Se tiveres alguma dúvida sobre esta política de privacidade ou sobre as nossas práticas de privacidade, por favor contacta-nos em getoutappmobile@gmail.com."
     },
+    terms_page: {
+        title: "Termos e Condições",
+        last_updated: "Última atualização: Janeiro 2026",
+        acceptance_title: "1. Aceitação dos Termos",
+        acceptance_text: "Ao aceder e usar o GetOut, aceitas e concordas em ficar vinculado aos termos e disposições deste acordo. Se não concordares com estes termos, por favor não uses o nosso serviço.",
+        account_title: "2. Contas de Utilizador",
+        account_text: "Quando crias uma conta connosco, deves fornecer informações precisas, completas e atuais. És responsável por:",
+        account_list: [
+            "Manter a confidencialidade da tua conta e palavra-passe",
+            "Restringir o acesso à tua conta",
+            "Todas as atividades que ocorram na tua conta"
+        ],
+        usage_title: "3. Uso Aceitável",
+        usage_text: "Concordas em não usar o GetOut para:",
+        usage_list: [
+            "Violar quaisquer leis ou regulamentos",
+            "Infringir direitos de propriedade intelectual",
+            "Assediar, abusar ou prejudicar outros utilizadores",
+            "Distribuir spam ou conteúdo malicioso"
+        ],
+        payment_title: "4. Pagamentos e Reembolsos",
+        payment_text: "Certas funcionalidades do GetOut requerem pagamento. Todos os pagamentos são processados de forma segura através de processadores de pagamento terceiros. Os reembolsos são tratados caso a caso de acordo com a nossa política de reembolsos.",
+        termination_title: "5. Rescisão",
+        termination_text: "Reservamo-nos o direito de terminar ou suspender a tua conta a qualquer momento, sem aviso prévio, por conduta que acreditemos violar estes Termos ou ser prejudicial a outros utilizadores, a nós ou a terceiros, ou por qualquer outro motivo.",
+        contact_title: "6. Contacta-nos",
+        contact_text: "Se tiveres alguma dúvida sobre estes Termos e Condições, por favor contacta-nos em getoutappmobile@gmail.com."
+    },
     hero: {
         subtitle: "PLATAFORMA DE GESTÃO SOCIAL",
         title_start: "Planeia Menos, ",
@@ -213,6 +240,8 @@ export const pt = {
         title: "Preços Simples e Transparentes",
         subtitle: "Escolhe o plano ideal para ti.",
         best_option: "Melhor Opção",
+        period_year: "POR ANO",
+        period_month: "POR MÊS",
         plan_free: {
             name: "Gratuito",
             price: "€0",
@@ -243,5 +272,20 @@ export const pt = {
         months_free: "MESES GRÁTIS",
         month_free: "MÊS GRÁTIS",
         get_app: "Obter a App"
+    },
+    scroll_selection: {
+        step1_label: "Passo 1",
+        step1_title: "Planeia a tua saída.",
+        step1_desc: "Cria eventos estruturados e substitui as conversas fragmentadas.",
+        step2_label: "Passo 2",
+        step2_title: "Convida e Organiza.",
+        step2_desc: "Convida amigos, partilha detalhes importantes e mantém tudo num só lugar.",
+        step3_label: "Passo 3",
+        step3_title: "RELAXA E APROVEITA.",
+        step3_desc: "Vê a tua visão ganhar vida em segundos, a app trata do resto."
+    },
+    app_showcase: {
+        placeholder_create: "Captura de Ecrã Criar Evento",
+        placeholder_events: "Captura de Ecrã Feed de Eventos"
     }
 };

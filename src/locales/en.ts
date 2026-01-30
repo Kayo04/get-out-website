@@ -78,6 +78,33 @@ export const en = {
         contact_title: "4. Contact Us",
         contact_text: "If you have any questions about this privacy policy or our privacy practices, please contact us at getoutappmobile@gmail.com."
     },
+    terms_page: {
+        title: "Terms & Conditions",
+        last_updated: "Last updated: January 2026",
+        acceptance_title: "1. Acceptance of Terms",
+        acceptance_text: "By accessing and using GetOut, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to these terms, please do not use our service.",
+        account_title: "2. User Accounts",
+        account_text: "When you create an account with us, you must provide accurate, complete, and current information. You are responsible for:",
+        account_list: [
+            "Maintaining the confidentiality of your account and password",
+            "Restricting access to your account",
+            "All activities that occur under your account"
+        ],
+        usage_title: "3. Acceptable Use",
+        usage_text: "You agree not to use GetOut to:",
+        usage_list: [
+            "Violate any laws or regulations",
+            "Infringe on intellectual property rights",
+            "Harass, abuse, or harm other users",
+            "Distribute spam or malicious content"
+        ],
+        payment_title: "4. Payments and Refunds",
+        payment_text: "Certain features of GetOut require payment. All payments are processed securely through third-party payment processors. Refunds are handled on a case-by-case basis in accordance with our refund policy.",
+        termination_title: "5. Termination",
+        termination_text: "We reserve the right to terminate or suspend your account at any time, without prior notice, for conduct that we believe violates these Terms or is harmful to other users, us, or third parties, or for any other reason.",
+        contact_title: "6. Contact Us",
+        contact_text: "If you have any questions about these Terms & Conditions, please contact us at getoutappmobile@gmail.com."
+    },
     hero: {
         subtitle: "SOCIAL MANAGEMENT PLATFORM",
         title_start: "Plan Less, ",
@@ -213,6 +240,8 @@ export const en = {
         title: "Simple, Transparent Pricing",
         subtitle: "Choose the plan that's right for you.",
         best_option: "Best Option",
+        period_year: "PER YEAR",
+        period_month: "PER MONTH",
         plan_free: {
             name: "Free",
             price: "€0",
@@ -243,6 +272,21 @@ export const en = {
         months_free: "MONTHS FREE",
         month_free: "MONTH FREE",
         get_app: "Get the App"
+    },
+    scroll_selection: {
+        step1_label: "Step 1",
+        step1_title: "Plan Your Night Out.",
+        step1_desc: "Create structured events and replace fragmented conversations.",
+        step2_label: "Step 2",
+        step2_title: "Invite and Organize.",
+        step2_desc: "Invite friends, share important details and keep everything in one place.",
+        step3_label: "Step 3",
+        step3_title: "RELAX AND ENJOY.",
+        step3_desc: "Watch your vision come to life in seconds, the app handles the rest."
+    },
+    app_showcase: {
+        placeholder_create: "Create Event Screenshot",
+        placeholder_events: "Events Feed Screenshot"
     }
 };
 

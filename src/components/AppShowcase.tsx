@@ -36,7 +36,7 @@ export default function AppShowcase() {
                 <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '120px', height: '30px', background: 'var(--surface-tertiary)', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px', zIndex: 10 }}></div>
                 
                 <div style={{ color: 'var(--text-main)', fontSize: '1.2rem', padding: '20px', textAlign: 'center', border: '2px dashed var(--text-dim)', borderRadius: '10px' }}>
-                    meter foto de Criar Evento
+                    {t.app_showcase.placeholder_create}
                 </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function AppShowcase() {
                 <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '120px', height: '30px', background: 'var(--surface-tertiary)', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px', zIndex: 10 }}></div>
                 
                 <div style={{ color: 'var(--text-main)', fontSize: '1.2rem', padding: '20px', textAlign: 'center', border: '2px dashed var(--text-dim)', borderRadius: '10px' }}>
-                    meter foto de eventos
+                    {t.app_showcase.placeholder_events}
                 </div>
             </div>
           </div>

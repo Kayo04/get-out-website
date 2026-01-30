@@ -4,35 +4,37 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLanguage } from "@/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const STEPS = [
-  {
-    step: "Passo 1",
-    title: "Planeia a tua saída.",
-    image: "/assets/Home.jpg",
-    desc: "Cria eventos estruturados e substitui as conversas fragmentadas.",
-    gradient: "from-[#EC4899] to-[#8B5CF6]",
-  },
-  {
-    step: "Passo 2",
-    title: "Convida e Organiza.",
-    image: "/assets/Event.jpg",
-    desc: "Convida amigos, partilha detalhes importantes e mantém tudo num só lugar.",
-    gradient: "from-[#3B82F6] to-[#2DD4BF]",
-  },
-  {
-    step: "Passo 3",
-    title: "RELAXA E APROVEITA.",
-    image: "/assets/Code.jpg",
-    desc: "Vê a tua visão ganhar vida em segundos, a app trata do resto.",
-    gradient: "from-[#F59E0B] to-[#EF4444]",
-  }
-];
-
 export default function ScrollSelection() {
   const container = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
+
+  const STEPS = [
+    {
+      step: t.scroll_selection.step1_label,
+      title: t.scroll_selection.step1_title,
+      image: "/assets/Home.jpg",
+      desc: t.scroll_selection.step1_desc,
+      gradient: "from-[#EC4899] to-[#8B5CF6]",
+    },
+    {
+      step: t.scroll_selection.step2_label,
+      title: t.scroll_selection.step2_title,
+      image: "/assets/Event.jpg",
+      desc: t.scroll_selection.step2_desc,
+      gradient: "from-[#3B82F6] to-[#2DD4BF]",
+    },
+    {
+      step: t.scroll_selection.step3_label,
+      title: t.scroll_selection.step3_title,
+      image: "/assets/Code.jpg",
+      desc: t.scroll_selection.step3_desc,
+      gradient: "from-[#F59E0B] to-[#EF4444]",
+    }
+  ];
 
   useGSAP(() => {
     // Estado inicial
