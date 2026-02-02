@@ -1,7 +1,7 @@
 export const pt = {
     navbar: {
         home: "Início",
-        about: "Sobre",
+        about: "Sobre Nós",
         features: "Funcionalidades",
         contact: "Contactos",
         pricing: "Preços",
@@ -21,6 +21,7 @@ export const pt = {
         message_label: "Mensagem",
         submit_btn: "Enviar Mensagem",
         success_msg: "Obrigado pelo contacto! Responderemos em breve.",
+        error_msg: "Lamentamos, algo correu mal. Por favor tenta novamente mais tarde ou envia-nos um email diretamente.",
         alt_contact: "Ou envia email diretamente para"
     },
     features_page: {
@@ -144,7 +145,10 @@ export const pt = {
             about: "Sobre",
             contact: "Contactos",
             privacy: "Privacidade",
-            terms: "Termos de Serviço"
+            terms: "Termos de Serviço",
+            cookies: "Política de Cookies",
+            complaints: "Livro de Reclamações",
+            disputes: "Resolução de Litígios (RAL)"
         }
     },
     partners: {
@@ -210,11 +214,31 @@ export const pt = {
         a3: "Os pagamentos são processados semanalmente diretamente para a tua conta bancária."
     },
     about: {
-        hero_title_1: "Logística",
-        hero_title_2: "Eficiente",
-        hero_desc: "O Get Out aborda as ineficiências da coordenação social moderna. Oferecemos uma alternativa estruturada às aplicações de mensagens caóticas.",
-        mission_title: "A Nossa Missão",
-        mission_desc: "Otimizar interações sociais através da tecnologia. Ao centralizar a criação de eventos, bilheteira e controlo de presenças, reduzimos o atrito do planeamento. A nossa plataforma serve tanto grupos casuais como organizadores profissionais, garantindo que o foco permanece no evento em si, não na administração."
+        hero_title_1: "Da Faculdade para a",
+        hero_title_2: "Comunidade",
+        hero_desc: "Como um projeto universitário entre três amigos evoluiu para uma missão de revolucionar a logística social.",
+        story_title: "A Nossa História",
+        story_text_1: "O Get Out não nasceu num escritório aborrecido. Nasceu no nosso quarto, entre noitadas a estudar e a dor de cabeça que era tentar combinar qualquer coisa.",
+        story_text_2: "Éramos só três amigos na faculdade a perceber que combinar saídas era um filme. Mil grupos no WhatsApp, ninguém respondia, e no fim ninguém sabia para onde ir. Uma confusão autêntica.",
+        story_text_3: "Então criámos isto. Começou como um trabalho para a faculdade, mas vimos logo que fazia falta. A ideia é simples: acabar com a seca de organizar cenas e tornar o 'sair' fácil e rápido.",
+        team_title: "Conhece os Fundadores",
+        team: {
+            vasco: {
+                name: "Vasco",
+                role: "Co-Fundador & Visionário",
+                bio: "A faísca por trás da ideia. O Vasco viu o problema primeiro e tem sido a força motriz para garantir que o Get Out serve necessidades humanas reais."
+            },
+            tiago: {
+                name: "Tiago",
+                role: "Co-Fundador & Lead Developer",
+                bio: "O arquiteto. O Tiago transformou a visão em código, construindo a plataforma robusta que alimenta os teus eventos hoje."
+            },
+            bruno: {
+                name: "Bruno",
+                role: "Co-Fundador & Estratégia",
+                bio: "O estratega. O Bruno garante que o Get Out cresce de forma sustentável e chega às pessoas que mais precisam."
+            }
+        }
     },
     download: {
         title_1: "Pronto para",
@@ -287,5 +311,37 @@ export const pt = {
     app_showcase: {
         placeholder_create: "Captura de Ecrã Criar Evento",
         placeholder_events: "Captura de Ecrã Feed de Eventos"
-    }
+    },
+    cookie_consent: {
+        text: "Utilizamos cookies para melhorar a tua experiência. Ao usar o nosso site, concordas com a nossa utilização de cookies.",
+        learn_more: "Saber mais",
+        accept: "Aceitar",
+        decline: "Recusar"
+    },
+    cookies_page: {
+        title: "Política de Cookies",
+        last_updated: "Última atualização: Janeiro 2026",
+        intro_text: "Utilizamos cookies para melhorar a tua experiência de navegação, analisar o tráfego do site e personalizar conteúdo. Esta política explica o que são cookies, como os usamos e as tuas escolhas.",
+        what_are_cookies_title: "1. O Que São Cookies",
+        what_are_cookies_text: "Cookies são pequenos ficheiros de texto armazenados no teu dispositivo quando visitas um site. Permitem que o site se lembre das tuas ações e preferências durante um período de tempo.",
+        types_title: "2. Tipos de Cookies Que Usamos",
+        types_essential: "Cookies Essenciais: Necessários para o site funcionar corretamente.",
+        types_analytics: "Cookies de Analítica: Ajudam-nos a entender como os visitantes interagem com o site.",
+        management_title: "3. Gestão de Cookies",
+        management_text: "Podes controlar e/ou apagar cookies como quiseres. Podes apagar todos os cookies que já estão no teu computador e podes configurar a maioria dos browsers para evitar que sejam colocados."
+    },
+    complaints_page: {
+        title: "Livro de Reclamações Eletrónico",
+        info_text: "Em cumprimento com o Decreto-Lei n.º 74/2017, disponibilizamos acesso à Plataforma do Livro de Reclamações Eletrónico. Esta plataforma permite apresentar reclamações e solicitar pedidos de informação diretamente à entidade competente.",
+        access_btn: "Aceder ao Livro de Reclamações",
+        contact_intro: "Antes de apresentar uma reclamação formal, encorajamos o contacto direto connosco para resolver qualquer questão:",
+        contact_email: "contact@getoutapp.pt"
+    },
+    disputes_page: {
+        title: "Resolução Alternativa de Litígios (RAL)",
+        intro_text: "Em caso de litígio de consumo, o consumidor pode recorrer a uma Entidade de Resolução Alternativa de Litígios de Consumo (RAL). As entidades RAL acessíveis incluem:",
+        lisbon_center: "Centro de Arbitragem de Conflitos de Consumo de Lisboa",
+        national_center: "CNIACC - Centro Nacional de Informação e Arbitragem de Conflitos de Consumo",
+        more_info: "Para mais informações, consulte o Portal do Consumidor em www.consumidor.pt."
+    },
 };

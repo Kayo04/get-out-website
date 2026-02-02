@@ -31,10 +31,10 @@ export default function ContactPage() {
         alert(t.contact_page.success_msg);
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("Failed to send message: " + (data.error || "Unknown error"));
+        alert(t.contact_page.error_msg || "Failed to send message.");
       }
     } catch (error) {
-      alert("An error occurred. Please try again later.");
+      alert(t.contact_page.error_msg || "An error occurred. Please try again later.");
       console.error(error);
     } finally {
       setLoading(false);

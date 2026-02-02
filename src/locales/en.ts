@@ -21,6 +21,7 @@ export const en = {
         message_label: "Message",
         submit_btn: "Send Message",
         success_msg: "Thank you for reaching out! We will get back to you soon.",
+        error_msg: "Sorry, something went wrong. Please try again later or email us directly.",
         alt_contact: "Or email us directly at"
     },
     features_page: {
@@ -144,7 +145,10 @@ export const en = {
             about: "About",
             contact: "Contact",
             privacy: "Privacy",
-            terms: "Terms of Service"
+            terms: "Terms of Service",
+            cookies: "Cookie Policy",
+            complaints: "Complaints Book",
+            disputes: "Dispute Resolution (RAL)"
         }
     },
     partners: {
@@ -210,11 +214,31 @@ export const en = {
         a3: "Payouts are processed weekly directly to your bank account."
     },
     about: {
-        hero_title_1: "Efficient",
-        hero_title_2: "Logistics",
-        hero_desc: "Get Out addresses the inefficiencies of modern social coordination. We provide a structured alternative to chaotic messaging apps.",
-        mission_title: "Our Mission",
-        mission_desc: "To optimize social interactions through technology. By centralizing event creation, ticketing, and attendance tracking, we reduce the friction of planning. Our platform serves both casual groups and professional organizers, ensuring that the focus remains on the event itself, not the administration."
+        hero_title_1: "From Campus to",
+        hero_title_2: "Community",
+        hero_desc: "How a university project between three friends evolved into a mission to revolutionize social logistics.",
+        story_title: "The Origin Story",
+        story_text_1: "Get Out wasn't born in a boring office. It started in our dorm, between all-nighters and the headache of trying to plan anything.",
+        story_text_2: "We were just three uni friends realizing that making plans was a total mess. A million group chats, ghosted messages, and no one knowing where to go. A total chaos.",
+        story_text_3: "So we made this. Started as a class project, but we knew people needed it. The vibe is simple: stop the hassle of organizing stuff and make going out easy.",
+        team_title: "Meet the Founders",
+        team: {
+            vasco: {
+                name: "Vasco",
+                role: "Co-Founder & Visionary",
+                bio: " The spark behind the idea. Vasco saw the problem first and has been the driving force ensuring Get Out serves real human needs."
+            },
+            tiago: {
+                name: "Tiago",
+                role: "Co-Founder & Lead Developer",
+                bio: "The architect. Tiago turned the vision into code, building the robust platform that powers your events today."
+            },
+            bruno: {
+                name: "Bruno",
+                role: "Co-Founder & Strategy",
+                bio: "The strategist. Bruno ensures that Get Out grows sustainably and reaches the people who need it most."
+            }
+        }
     },
     download: {
         title_1: "Ready to",
@@ -287,7 +311,39 @@ export const en = {
     app_showcase: {
         placeholder_create: "Create Event Screenshot",
         placeholder_events: "Events Feed Screenshot"
-    }
+    },
+    cookie_consent: {
+        text: "We use cookies to improve your experience. By using our site, you agree to our use of cookies.",
+        learn_more: "Learn more",
+        accept: "Accept",
+        decline: "Decline"
+    },
+    cookies_page: {
+        title: "Cookie Policy",
+        last_updated: "Last updated: January 2026",
+        intro_text: "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. This policy explains what cookies are, how we use them, and your choices regarding their use.",
+        what_are_cookies_title: "1. What Are Cookies",
+        what_are_cookies_text: "Cookies are small text files stored on your device when you visit a website. They allow the website to remember your actions and preferences over a period of time.",
+        types_title: "2. Types of Cookies We Use",
+        types_essential: "Essential Cookies: Necessary for the website to function properly.",
+        types_analytics: "Analytics Cookies: Help us understand how visitors interact with the website.",
+        management_title: "3. Cookie Management",
+        management_text: "You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed."
+    },
+    complaints_page: {
+        title: "Electronic Complaints Book",
+        info_text: "In compliance with Portuguese law (Decree-Law no. 74/2017), we provide access to the Electronic Complaints Book platform. This platform allows you to submit complaints and requests for information directly to the competent entity.",
+        access_btn: "Access Complaints Book",
+        contact_intro: "Before submitting a formal complaint, we encourage you to contact us directly to resolve any issues:",
+        contact_email: "contact@getoutapp.pt"
+    },
+    disputes_page: {
+        title: "Alternative Dispute Resolution (RAL)",
+        intro_text: "In the event of a consumer dispute, the consumer may resort to an Alternative Dispute Resolution Entity (RAL). Accessible RAL entities include:",
+        lisbon_center: "Lisbon Consumer Conflict Arbitration Center",
+        national_center: "CNIACC - National Center for Information and Arbitration of Consumer Conflicts",
+        more_info: "For more information, please visit the Consumer Portal at www.consumidor.pt."
+    },
 };
 
 export type Translations = typeof en;

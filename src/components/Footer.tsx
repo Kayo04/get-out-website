@@ -93,6 +93,15 @@ export default function Footer() {
           <Link href="/terms" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
             {t.footer.links.terms}
           </Link>
+          <Link href="/cookies" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.footer.links.cookies}
+          </Link>
+          <Link href="/complaints" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.footer.links.complaints}
+          </Link>
+          <Link href="/disputes" style={{ color: isDarkMode ? '#888' : '#666', textDecoration: 'none', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            {t.footer.links.disputes}
+          </Link>
         </nav>
 
         <p style={{ color: isDarkMode ? '#444' : '#999', fontSize: '11px' }}>

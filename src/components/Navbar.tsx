@@ -87,7 +87,7 @@ export default function Navbar() {
           left: '50%',
           transform: 'translateX(-50%)'
       }}> {/* Gap aumentado para 35px */}
-        {['home', 'pricing', 'contact'].map((key) => (
+        {['home', 'about', 'pricing', 'contact'].map((key) => (
           <Link 
             key={key} 
             href={key === 'home' ? '/' : `/${key}`} 
@@ -206,6 +206,7 @@ export default function Navbar() {
           )}
 
            <Link href="/" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.home}</Link>
+          <Link href="/about" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.about}</Link>
           <Link href="/pricing" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.pricing}</Link>
           <Link href="/contact" style={{ ...linkStyle, fontSize: '1.8rem', fontWeight: '800' }} onClick={() => setIsOpen(false)}>{t.navbar.contact}</Link>
       </div>
