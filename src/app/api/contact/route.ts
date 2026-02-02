@@ -14,8 +14,11 @@ export async function POST(request: Request) {
         }
 
         // Configure transporter
+        // Configure transporter
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: process.env.EMAIL_HOST || 'smtp.gmail.com', // Fallback for safety
+            port: Number(process.env.EMAIL_PORT) || 465,
+            secure: true, // true for 465, false for other ports
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS,
@@ -25,7 +28,7 @@ export async function POST(request: Request) {
         // Email content
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: 'getoutappmobile@gmail.com', // Always send to the official email
+            to: 'contact@getoutapp.pt', // Always send to the official email
             subject: `New Contact Form Submission from ${name}`,
             text: `
         Name: ${name}

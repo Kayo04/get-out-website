@@ -13,7 +13,7 @@ export default function PricingPage() {
   const pricingConfig = {
     basic: { 
       monthly: 4.99, 
-      annually: 55.00,
+      annually: 54.99,
       freeMonthsAnnually: 1 // ~1 mês grátis
     },
     pro: { 
@@ -74,7 +74,6 @@ export default function PricingPage() {
       period: t.pricing_page?.plan_company.period,
       features: t.pricing_page?.plan_company.features,
       highlight: false,
-      cta: t.pricing_page?.plan_company.cta,
       freeMonths: pricingConfig.enterprise.freeMonthsAnnually
     }
   ];
@@ -249,7 +248,7 @@ export default function PricingPage() {
                         cursor: 'pointer',
                         transition: 'all 0.2s ease'
                     }}>
-                        {plan.id === 'enterprise' ? (t.pricing_page?.plan_company.cta || "Contact Us") : (t.pricing_page?.get_app || "Get the App")}
+                        {t.pricing_page?.get_app || "Get the App"}
                     </button>
                 </div>
             ))}

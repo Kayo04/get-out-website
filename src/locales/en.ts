@@ -76,7 +76,7 @@ export const en = {
             "To communicate with you about updates or offers."
         ],
         contact_title: "4. Contact Us",
-        contact_text: "If you have any questions about this privacy policy or our privacy practices, please contact us at getoutappmobile@gmail.com."
+        contact_text: "If you have any questions about this privacy policy or our privacy practices, please contact us at contact@getoutapp.pt."
     },
     terms_page: {
         title: "Terms & Conditions",
@@ -103,7 +103,7 @@ export const en = {
         termination_title: "5. Termination",
         termination_text: "We reserve the right to terminate or suspend your account at any time, without prior notice, for conduct that we believe violates these Terms or is harmful to other users, us, or third parties, or for any other reason.",
         contact_title: "6. Contact Us",
-        contact_text: "If you have any questions about these Terms & Conditions, please contact us at getoutappmobile@gmail.com."
+        contact_text: "If you have any questions about these Terms & Conditions, please contact us at contact@getoutapp.pt."
     },
     hero: {
         subtitle: "SOCIAL MANAGEMENT PLATFORM",

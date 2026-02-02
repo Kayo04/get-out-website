@@ -118,7 +118,7 @@ export default function ContactPage() {
             </div>
 
             <div style={{ marginTop: "3rem", textAlign: "center", color: "var(--text-dim)" }}>
-              <p>{t.contact_page.alt_contact} <a href="mailto:getoutappmobile@gmail.com" style={{ color: "var(--primary)" }}>getoutappmobile@gmail.com</a></p>
+              <p>{t.contact_page.alt_contact} <a href="mailto:contact@getoutapp.pt" style={{ color: "var(--primary)" }}>contact@getoutapp.pt</a></p>
             </div>
           </div>
         </div>

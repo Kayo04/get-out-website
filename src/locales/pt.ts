@@ -76,7 +76,7 @@ export const pt = {
             "Para comunicar contigo sobre atualizações ou ofertas."
         ],
         contact_title: "4. Contacta-nos",
-        contact_text: "Se tiveres alguma dúvida sobre esta política de privacidade ou sobre as nossas práticas de privacidade, por favor contacta-nos em getoutappmobile@gmail.com."
+        contact_text: "Se tiveres alguma dúvida sobre esta política de privacidade ou sobre as nossas práticas de privacidade, por favor contacta-nos em contact@getoutapp.pt."
     },
     terms_page: {
         title: "Termos e Condições",
@@ -103,7 +103,7 @@ export const pt = {
         termination_title: "5. Rescisão",
         termination_text: "Reservamo-nos o direito de terminar ou suspender a tua conta a qualquer momento, sem aviso prévio, por conduta que acreditemos violar estes Termos ou ser prejudicial a outros utilizadores, a nós ou a terceiros, ou por qualquer outro motivo.",
         contact_title: "6. Contacta-nos",
-        contact_text: "Se tiveres alguma dúvida sobre estes Termos e Condições, por favor contacta-nos em getoutappmobile@gmail.com."
+        contact_text: "Se tiveres alguma dúvida sobre estes Termos e Condições, por favor contacta-nos em contact@getoutapp.pt."
     },
     hero: {
         subtitle: "PLATAFORMA DE GESTÃO SOCIAL",

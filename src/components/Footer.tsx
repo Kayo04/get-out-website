@@ -50,14 +50,14 @@ export default function Footer() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '40px', flexWrap: 'wrap', justifyContent: 'center' }}>
           
           {/* BOTÃO DE EMAIL */}
-          <a href="mailto:getoutappmobile@gmail.com" style={{ 
+          <a href="mailto:contact@getoutapp.pt" style={{ 
             display: 'flex', alignItems: 'center', gap: '10px',
             backgroundColor: isDarkMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)',
             border: `1px solid ${isDarkMode ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
             padding: '10px 24px', borderRadius: '12px', color: 'var(--text-main)', textDecoration: 'none', fontSize: '14px', fontWeight: '500'
           }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            getoutappmobile@gmail.com
+            contact@getoutapp.pt
           </a>
 
           {/* INSTAGRAM */}
