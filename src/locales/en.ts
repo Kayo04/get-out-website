@@ -149,7 +149,8 @@ export const en = {
             cookies: "Cookie Policy",
             complaints: "Complaints Book",
             disputes: "Dispute Resolution (RAL)"
-        }
+        },
+        ral_text: "In case of dispute the consumer may resort to an Alternative Consumer Dispute Resolution Entity: CNIACC - National Center for Information and Arbitration of Consumer Conflicts (www.cniacc.pt). More information at Consumer Portal (www.consumidor.pt)."
     },
     partners: {
         trusted_by: "TRUSTED BY INDUSTRY LEADERS"
@@ -319,16 +320,31 @@ export const en = {
         decline: "Decline"
     },
     cookies_page: {
-        title: "Cookie Policy",
-        last_updated: "Last updated: January 2026",
-        intro_text: "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. This policy explains what cookies are, how we use them, and your choices regarding their use.",
-        what_are_cookies_title: "1. What Are Cookies",
-        what_are_cookies_text: "Cookies are small text files stored on your device when you visit a website. They allow the website to remember your actions and preferences over a period of time.",
-        types_title: "2. Types of Cookies We Use",
-        types_essential: "Essential Cookies: Necessary for the website to function properly.",
-        types_analytics: "Analytics Cookies: Help us understand how visitors interact with the website.",
-        management_title: "3. Cookie Management",
-        management_text: "You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed."
+        title: "COOKIES AND TRACKING TECHNOLOGIES POLICY",
+        last_updated: "Last updated: February 4, 2026",
+        intro_text: "GetOut values transparency and the security of its users' data. This Cookie Policy explains how we use cookies, pixels, and similar technologies (such as mobile identifiers) on our Website and Mobile Application.",
+        section_1_title: "1. WHAT ARE COOKIES AND IDENTIFIERS?",
+        section_1_web: "On the Website: Cookies are small text files saved in your browser when you visit our site. They serve to \"remember\" your preferences.",
+        section_1_mobile: "In the Mobile App: We do not use traditional cookies, instead we use \"Device Identifiers\" (such as Google Advertising ID or Apple's IDFA) and SDKs (Software Development Kits) that work similarly, allowing us to know, for example, if the user has already seen a certain ad.",
+        section_1_note: "In this policy, we refer to all these technologies collectively as \"Cookies\".",
+        section_2_title: "2. WHY DO WE USE THESE TECHNOLOGIES?",
+        section_2_intro: "We use Cookies for three main reasons:",
+        section_2_essential_title: "Essential (Security and Login):",
+        section_2_essential_desc: "These are mandatory for the App and Site to function. For example, they allow your account to stay securely logged in via Google Firebase Authentication services. Without them, you would not be able to purchase tickets or access your profile.",
+        section_2_analytics_title: "Analytics (Statistics):",
+        section_2_analytics_desc: "We use services like Google Analytics to understand how users navigate the platform. This information is anonymous and helps us discover bugs, know which events are most popular, and improve App performance.",
+        section_2_marketing_title: "Advertising and Marketing:",
+        section_2_marketing_desc: "GetOut displays advertising to keep the service viable. We use Google AdMob, which may collect identifiers from your device to show you ads that are relevant to your interests (Personalized Advertising), preventing you from repeatedly seeing the same irrelevant ad.",
+        section_3_title: "3. WHICH THIRD PARTIES HAVE ACCESS?",
+        section_3_intro: "To provide these services, we work with trusted technology partners whose tools are integrated into our platform:",
+        section_3_google: "Google (Alphabet, Inc.): Provider of infrastructure (Firebase), analytics (Analytics), and advertising (AdMob).",
+        section_4_title: "4. HOW CAN YOU MANAGE OR DISABLE?",
+        section_4_intro: "The user has full control over their data:",
+        section_4_web: "On the Website: You can configure your browser (Chrome, Safari, Firefox, Edge) to block all cookies. Note that this may prevent logging into the site.",
+        section_4_mobile: "In the Mobile App (Android/iOS): You can limit ad tracking by going to your phone's \"Settings\", section \"Privacy\" or \"Google\", and activating the option to \"Limit ad tracking\" or \"Reset advertising ID\".",
+        section_4_app: "Consent in App: When installing the App, we request your consent (via iOS operating system or Android pop-up) to use these identifiers. You can change your decision at any time in your phone settings.",
+        section_5_title: "5. QUESTIONS?",
+        section_5_text: "If you have any questions about how we manage these technologies, please contact us via support email."
     },
     complaints_page: {
         title: "Electronic Complaints Book",

@@ -149,7 +149,8 @@ export const pt = {
             cookies: "Política de Cookies",
             complaints: "Livro de Reclamações",
             disputes: "Resolução de Litígios (RAL)"
-        }
+        },
+        ral_text: "Em caso de litígio o consumidor pode recorrer a uma Entidade de Resolução Alternativa de Litígios de Consumo: CNIACC - Centro Nacional de Informação e Arbitragem de Conflitos de Consumo (www.cniacc.pt). Mais informações em Portal do Consumidor (www.consumidor.pt)."
     },
     partners: {
         trusted_by: "USADO PELOS LÍDERES DA INDÚSTRIA"
@@ -319,16 +320,31 @@ export const pt = {
         decline: "Recusar"
     },
     cookies_page: {
-        title: "Política de Cookies",
-        last_updated: "Última atualização: Janeiro 2026",
-        intro_text: "Utilizamos cookies para melhorar a tua experiência de navegação, analisar o tráfego do site e personalizar conteúdo. Esta política explica o que são cookies, como os usamos e as tuas escolhas.",
-        what_are_cookies_title: "1. O Que São Cookies",
-        what_are_cookies_text: "Cookies são pequenos ficheiros de texto armazenados no teu dispositivo quando visitas um site. Permitem que o site se lembre das tuas ações e preferências durante um período de tempo.",
-        types_title: "2. Tipos de Cookies Que Usamos",
-        types_essential: "Cookies Essenciais: Necessários para o site funcionar corretamente.",
-        types_analytics: "Cookies de Analítica: Ajudam-nos a entender como os visitantes interagem com o site.",
-        management_title: "3. Gestão de Cookies",
-        management_text: "Podes controlar e/ou apagar cookies como quiseres. Podes apagar todos os cookies que já estão no teu computador e podes configurar a maioria dos browsers para evitar que sejam colocados."
+        title: "POLÍTICA DE COOKIES E TECNOLOGIAS DE RASTREIO",
+        last_updated: "Última atualização: Dia 4 de fevereiro 2026",
+        intro_text: "A GetOut preza a transparência e a segurança dos dados dos seus utilizadores. Esta Política de Cookies explica como utilizamos cookies, pixéis e tecnologias semelhantes (como identificadores móveis) no nosso Website e na Aplicação Móvel.",
+        section_1_title: "1. O QUE SÃO COOKIES E IDENTIFICADORES?",
+        section_1_web: "No Website: Cookies são pequenos ficheiros de texto gravados no seu navegador quando visita o nosso site. Eles servem para \"lembrar\" as suas preferências.",
+        section_1_mobile: "Na Aplicação Móvel: Não usamos cookies tradicionais, mas sim \"Identificadores de Dispositivo\" (como o Advertising ID da Google ou IDFA da Apple) e SDKs (Software Development Kits) que funcionam de forma semelhante, permitindo-nos saber, por exemplo, se o utilizador já viu um determinado anúncio.",
+        section_1_note: "Nesta política, referimo-nos a todas estas tecnologias coletivamente como \"Cookies\".",
+        section_2_title: "2. PORQUE UTILIZAMOS ESTAS TECNOLOGIAS?",
+        section_2_intro: "Utilizamos Cookies por três motivos principais:",
+        section_2_essential_title: "Essenciais (Segurança e Login):",
+        section_2_essential_desc: "Estes são obrigatórios para a App e o Site funcionarem. Permitem, por exemplo, que a sua conta se mantenha iniciada de forma segura através dos serviços da Google Firebase Authentication. Sem eles, não conseguiria comprar bilhetes ou aceder ao seu perfil.",
+        section_2_analytics_title: "Analíticos (Estatísticas):",
+        section_2_analytics_desc: "Utilizamos serviços como o Google Analytics para entender como os utilizadores navegam na plataforma. Estas informações são anónimas e ajudam-nos a descobrir bugs, saber que eventos são mais procurados e melhorar a performance da App.",
+        section_2_marketing_title: "Publicidade e Marketing:",
+        section_2_marketing_desc: "A GetOut exibe publicidade para manter o serviço viável. Utilizamos a Google AdMob, que pode recolher identificadores do seu dispositivo para lhe mostrar anúncios que sejam relevantes para os seus interesses (Publicidade Personalizada), evitando que veja repetidamente o mesmo anúncio irrelevante.",
+        section_3_title: "3. QUE TERCEIROS TÊM ACESSO?",
+        section_3_intro: "Para fornecer estes serviços, trabalhamos com parceiros tecnológicos de confiança cujas ferramentas estão integradas na nossa plataforma:",
+        section_3_google: "Google (Alphabet, Inc.): Fornecedor de infraestrutura (Firebase), análise (Analytics) e publicidade (AdMob).",
+        section_4_title: "4. COMO PODE GERIR OU DESATIVAR?",
+        section_4_intro: "O utilizador tem total controlo sobre os seus dados:",
+        section_4_web: "No Website: Pode configurar o seu navegador (Chrome, Safari, Firefox, Edge) para bloquear todos os cookies. Note que isso pode impedir o login no site.",
+        section_4_mobile: "Na Aplicação Móvel (Android/iOS): Pode limitar o rastreio de anúncios indo às \"Definições\" do seu telemóvel, secção \"Privacidade\" ou \"Google\", e ativando a opção de \"Limitar rastreio de publicidade\" ou \"Repor ID de publicidade\".",
+        section_4_app: "Consentimento na App: Ao instalar a App, solicitamos o seu consentimento (via sistema operativo iOS ou pop-up Android) para utilizar estes identificadores. Pode alterar a sua decisão a qualquer momento nas definições do telemóvel.",
+        section_5_title: "5. DÚVIDAS?",
+        section_5_text: "Se tiver questões sobre como gerimos estas tecnologias, entre em contacto connosco através do email de suporte."
     },
     complaints_page: {
         title: "Livro de Reclamações Eletrónico",

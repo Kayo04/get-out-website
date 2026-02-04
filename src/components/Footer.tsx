@@ -108,6 +108,18 @@ export default function Footer() {
           © 2026 GetOut Social. All rights reserved.
         </p>
 
+        {/* RAL TEXT */}
+        <p style={{ 
+          color: isDarkMode ? '#444' : '#999', 
+          fontSize: '10px', 
+          textAlign: 'center', 
+          maxWidth: '800px', 
+          marginTop: '20px',
+          lineHeight: '1.5'
+        }}>
+          {t.footer.ral_text}
+        </p>
+
       </footer>
     </div>
   );
